@@ -1,4 +1,4 @@
-# Anteproyecto TFG 2º DAM 2024 <br/>
+# Anteproyecto TFG 2º DAM 2024
 
 # Título del proyecto
 
