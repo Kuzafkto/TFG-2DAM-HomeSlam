@@ -37,4 +37,4 @@ Para la base de datos y guardar recursos se utilizará Firebase
     - [https://github.com/Kuzafkto/HomeSlam-Firebase](https://github.com/Kuzafkto/HomeSlam-Firebase)
     
 - Repositorio de la app movil:
-    - [https://github.com/Kuzafkto/HomeSlam-Kotlin](https://github.com/Kuzafkto/HomeSlam-Kotlin)
+    - [https://github.com/Kuzafkto/HomeSlam-Kotlin](https://github.com/Kuzafkto/HomeSlamAndroid)
