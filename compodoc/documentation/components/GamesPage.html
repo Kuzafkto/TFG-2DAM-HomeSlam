@@ -1,0 +1,1440 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>home-slam documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">home-slam documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  GamesPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/games/games.page.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for managing the games page.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-games</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./games.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./games.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#games$" >games$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loading" >loading</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#downloadGamesCSV" >downloadGamesCSV</a>
+                            </li>
+                            <li>
+                                <a href="#downloadVotesCSV" >downloadVotesCSV</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#onCardClicked" >onCardClicked</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onDeleteClicked" >onDeleteClicked</a>
+                            </li>
+                            <li>
+                                <a href="#onNewGame" >onNewGame</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#presentForm" >presentForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(gameService: <a href="../injectables/GameService.html" target="_self">GameService</a>, voteService: <a href="../injectables/VoteService.html" target="_self">VoteService</a>, teamService: <a href="../injectables/TeamService.html" target="_self">TeamService</a>, toast: ToastController, modal: ModalController, media: <a href="../injectables/MediaService.html" target="_self">MediaService</a>, csvService: <a href="../injectables/CsvService.html" target="_self">CsvService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/games/games.page.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of GamesPage.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>gameService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GameService.html" target="_self" >GameService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to manage game data.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>voteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/VoteService.html" target="_self" >VoteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to manage vote data.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>teamService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TeamService.html" target="_self" >TeamService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to manage team data.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>toast</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Controller to show toast notifications.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>modal</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Controller to handle modal dialogs.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>media</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MediaService.html" target="_self" >MediaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to manage media uploads.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>csvService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CsvService.html" target="_self" >CsvService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to generate CSV files.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadGamesCSV"></a>
+                    <span class="name">
+                        <span ><b>downloadGamesCSV</b></span>
+                        <a href="#downloadGamesCSV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadGamesCSV()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="290"
+                                    class="link-to-prism">src/app/pages/games/games.page.ts:290</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Downloads the games data as a CSV file.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadVotesCSV"></a>
+                    <span class="name">
+                        <span ><b>downloadVotesCSV</b></span>
+                        <a href="#downloadVotesCSV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadVotesCSV()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="257"
+                                    class="link-to-prism">src/app/pages/games/games.page.ts:257</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Downloads the votes data as a CSV file.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/pages/games/games.page.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular lifecycle hook that is called after data-bound properties are initialized.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCardClicked"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>onCardClicked</b></span>
+                        <a href="#onCardClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onCardClicked(game: <a href="../interfaces/Game.html" target="_self">Game</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/pages/games/games.page.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the click event on a game card.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>game</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Game.html" target="_self" >Game</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The game that was clicked.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDeleteClicked"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>onDeleteClicked</b></span>
+                        <a href="#onDeleteClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onDeleteClicked(game: <a href="../interfaces/Game.html" target="_self">Game</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">src/app/pages/games/games.page.ts:173</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the deletion of a game.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>game</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Game.html" target="_self" >Game</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The game to be deleted.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNewGame"></a>
+                    <span class="name">
+                        <span ><b>onNewGame</b></span>
+                        <a href="#onNewGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNewGame()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/pages/games/games.page.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the creation of a new game.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="presentForm"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>presentForm</b></span>
+                        <a href="#presentForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>presentForm(data: any | null, onDismiss: (result: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>) => void)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="211"
+                                    class="link-to-prism">src/app/pages/games/games.page.ts:211</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Presents a form in a modal for creating or editing a game.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                        <code>any | null</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The initial data to populate the form with.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>onDismiss</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Callback to handle the result when the modal is dismissed.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="games$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>games$</b></span>
+                        <a href="#games$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.gameService.games$</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/games/games.page.ts:33</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Observable for the list of games.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/pages/games/games.page.ts:28</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indicates if the page is currently loading.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Haptics } from &#x27;@capacitor/haptics&#x27;;
+import { ModalController, ToastController, ToastOptions } from &#x27;@ionic/angular&#x27;;
+import { Game } from &#x27;src/app/core/interfaces/game&#x27;;
+import { MediaService } from &#x27;src/app/core/services/api/media.service&#x27;;
+import { GameService } from &#x27;src/app/core/services/api/game.service&#x27;;
+import { VoteService } from &#x27;src/app/core/services/api/vote.service&#x27;;
+import { TeamService } from &#x27;src/app/core/services/api/team.service&#x27;;
+import { GameDetailComponent } from &#x27;src/app/shared/components/game-detail/game-detail.component&#x27;;
+import { dataURLtoBlob } from &#x27;src/app/core/helpers/blob&#x27;;
+import { combineLatest } from &#x27;rxjs&#x27;;
+import { map, take } from &#x27;rxjs/operators&#x27;;
+import { CsvService } from &#x27;src/app/core/services/api/csv.service&#x27;;
+
+/**
+ * Component for managing the games page.
+ */
+@Component({
+  selector: &#x27;app-games&#x27;,
+  templateUrl: &#x27;./games.page.html&#x27;,
+  styleUrls: [&#x27;./games.page.scss&#x27;],
+})
+export class GamesPage implements OnInit {
+
+  /**
+   * Indicates if the page is currently loading.
+   */
+  public loading: boolean &#x3D; false;
+
+  /**
+   * Observable for the list of games.
+   */
+  public games$ &#x3D; this.gameService.games$;
+
+  /**
+   * Creates an instance of GamesPage.
+   * 
+   * @param gameService Service to manage game data.
+   * @param voteService Service to manage vote data.
+   * @param teamService Service to manage team data.
+   * @param toast Controller to show toast notifications.
+   * @param modal Controller to handle modal dialogs.
+   * @param media Service to manage media uploads.
+   * @param csvService Service to generate CSV files.
+   */
+  constructor(
+    private gameService: GameService,
+    private voteService: VoteService,
+    private teamService: TeamService,
+    private toast: ToastController,
+    private modal: ModalController,
+    private media: MediaService,
+    private csvService: CsvService
+  ) {}
+
+  /**
+   * Angular lifecycle hook that is called after data-bound properties are initialized.
+   */
+  ngOnInit() {
+    this.loading &#x3D; false;
+  }
+
+  /**
+   * Handles the creation of a new game.
+   */
+  onNewGame() {
+    var onDismiss &#x3D; (info: any) &#x3D;&gt; {
+      switch (info.role) {
+        case &#x27;ok&#x27;: {
+          this.gameService.addGame(info.data).subscribe(async () &#x3D;&gt; {
+            const options: ToastOptions &#x3D; {
+              message: &#x60;Game created&#x60;,
+              duration: 1000,
+              position: &#x27;bottom&#x27;,
+              color: &#x27;tertiary&#x27;,
+              cssClass: &#x27;card-ion-toast&#x27;
+            };
+            const toast &#x3D; await this.toast.create(options);
+            toast.present();
+            await Haptics.notification();
+          }, error &#x3D;&gt; {
+            console.error(&#x27;Error creating game:&#x27;, error);
+            const options: ToastOptions &#x3D; {
+              message: &#x27;Error creating game&#x27;,
+              duration: 1000,
+              position: &#x27;bottom&#x27;,
+              color: &#x27;danger&#x27;,
+              cssClass: &#x27;card-ion-toast&#x27;
+            };
+            this.toast.create(options).then(toast &#x3D;&gt; toast.present());
+          });
+        }
+        break;
+        default: {
+          console.error(&quot;No debería entrar&quot;);
+        }
+      }
+    }
+    this.presentForm(null, onDismiss);
+  }
+
+  /**
+   * Handles the click event on a game card.
+   * 
+   * @param game The game that was clicked.
+   */
+  public async onCardClicked(game: Game) {
+    var onDismiss &#x3D; (info: any) &#x3D;&gt; {
+      switch (info.role) {
+        case &#x27;ok&#x27;: {
+          this.gameService.updateGame(info.data).subscribe(async () &#x3D;&gt; {
+            const options: ToastOptions &#x3D; {
+              message: &#x60;Game modified&#x60;,
+              duration: 1000,
+              position: &#x27;bottom&#x27;,
+              color: &#x27;tertiary&#x27;,
+              cssClass: &#x27;card-ion-toast&#x27;
+            };
+            const toast &#x3D; await this.toast.create(options);
+            toast.present();
+            await Haptics.notification();
+          }, error &#x3D;&gt; {
+            console.error(&#x27;Error modifying game:&#x27;, error);
+            const options: ToastOptions &#x3D; {
+              message: &#x27;Error modifying game&#x27;,
+              duration: 1000,
+              position: &#x27;bottom&#x27;,
+              color: &#x27;danger&#x27;,
+              cssClass: &#x27;card-ion-toast&#x27;
+            };
+            this.toast.create(options).then(toast &#x3D;&gt; toast.present());
+          });
+        }
+        break;
+        case &#x27;delete&#x27;: {
+          this.gameService.deleteGame(info.data).subscribe(async () &#x3D;&gt; {
+            const options: ToastOptions &#x3D; {
+              message: &#x60;Game deleted&#x60;,
+              duration: 1000,
+              position: &#x27;bottom&#x27;,
+              color: &#x27;tertiary&#x27;,
+              cssClass: &#x27;card-ion-toast&#x27;
+            };
+            const toast &#x3D; await this.toast.create(options);
+            toast.present();
+            await Haptics.notification();
+          }, error &#x3D;&gt; {
+            console.error(&#x27;Error deleting game:&#x27;, error);
+            const options: ToastOptions &#x3D; {
+              message: &#x27;Error deleting game&#x27;,
+              duration: 1000,
+              position: &#x27;bottom&#x27;,
+              color: &#x27;danger&#x27;,
+              cssClass: &#x27;card-ion-toast&#x27;
+            };
+            this.toast.create(options).then(toast &#x3D;&gt; toast.present());
+          });
+        }
+        break;
+        default: {
+          console.error(&quot;No debería entrar&quot;);
+        }
+      }
+    }
+    this.presentForm(game, onDismiss);
+  }
+
+  /**
+   * Handles the deletion of a game.
+   * 
+   * @param game The game to be deleted.
+   */
+  public onDeleteClicked(game: Game) {
+    var _game: Game &#x3D; { ...game };
+
+    this.gameService.deleteGame(_game).subscribe(
+      {
+        next: async () &#x3D;&gt; {
+          const options: ToastOptions &#x3D; {
+            message: &#x60;Game deleted&#x60;,
+            duration: 1000,
+            position: &#x27;bottom&#x27;,
+            color: &#x27;danger&#x27;,
+            cssClass: &#x27;fav-ion-toast&#x27;
+          };
+          const toast &#x3D; await this.toast.create(options);
+          toast.present();
+          await Haptics.notification();
+        },
+        error: err &#x3D;&gt; {
+          console.log(err);
+          const options: ToastOptions &#x3D; {
+            message: &#x27;Error deleting game&#x27;,
+            duration: 1000,
+            position: &#x27;bottom&#x27;,
+            color: &#x27;danger&#x27;,
+            cssClass: &#x27;card-ion-toast&#x27;
+          };
+          this.toast.create(options).then(toast &#x3D;&gt; toast.present());
+        }
+      }
+    );
+  }
+
+  /**
+   * Presents a form in a modal for creating or editing a game.
+   * 
+   * @param data The initial data to populate the form with.
+   * @param onDismiss Callback to handle the result when the modal is dismissed.
+   */
+  async presentForm(data: any | null, onDismiss: (result: any) &#x3D;&gt; void) {
+    const modal &#x3D; await this.modal.create({
+      component: GameDetailComponent,
+      componentProps: {
+        game: data
+      },
+      cssClass: &quot;fullModal&quot;
+    });
+    await modal.present();
+    const result &#x3D; await modal.onDidDismiss();
+
+    if (result &amp;&amp; result.data) {
+      if (result.data.imageUrl) {
+        if (data &amp;&amp; data.imageUrl &#x3D;&#x3D;&#x3D; result.data.imageUrl) {
+          onDismiss(result);
+        } else {
+          dataURLtoBlob(result.data.imageUrl, (blob: Blob) &#x3D;&gt; {
+            this.media.upload(blob).subscribe((media: number[]) &#x3D;&gt; {
+              result.data.imageUrl &#x3D; media[0];
+              result.data.imageUrl &#x3D; result.data.imageUrl.url_medium;
+              onDismiss(result);
+            }, error &#x3D;&gt; {
+              console.error(&#x27;Error uploading image:&#x27;, error);
+              const options: ToastOptions &#x3D; {
+                message: &#x27;Error uploading image&#x27;,
+                duration: 1000,
+                position: &#x27;bottom&#x27;,
+                color: &#x27;danger&#x27;,
+                cssClass: &#x27;card-ion-toast&#x27;
+              };
+              this.toast.create(options).then(toast &#x3D;&gt; toast.present());
+            });
+          });
+        }
+      } else {
+        result.data.imageUrl &#x3D; &quot;&quot;;
+        onDismiss(result)
+      }
+    } else {
+      onDismiss(result);
+    }
+  }
+
+  /**
+   * Downloads the votes data as a CSV file.
+   */
+  downloadVotesCSV() {
+    combineLatest([
+      this.voteService.votes$,
+      this.teamService.teams$,
+      this.gameService.games$
+    ]).pipe(
+      map(([votes, teams, games]) &#x3D;&gt; {
+        const votesWithDetails &#x3D; votes.map(vote &#x3D;&gt; {
+          const team &#x3D; teams.find(t &#x3D;&gt; t.uuid &#x3D;&#x3D;&#x3D; vote.reference);
+          const game &#x3D; games.find(g &#x3D;&gt; g.uuid &#x3D;&#x3D;&#x3D; vote.game);
+          return {
+            ...vote,
+            votedTeam: team ? team.name : &#x27;Unknown&#x27;,
+            gameDate: game ? new Date(game.gameDate).toLocaleDateString() : &#x27;Unknown&#x27;
+          };
+        });
+
+        const allKeys &#x3D; new Set&lt;string&gt;();
+        votesWithDetails.forEach((vote: {}) &#x3D;&gt; {
+          Object.keys(vote).forEach(key &#x3D;&gt; allKeys.add(key));
+        });
+
+        return { votesWithDetails, keys: Array.from(allKeys) };
+      })
+    ).subscribe(({ votesWithDetails, keys }) &#x3D;&gt; {
+      const csvData &#x3D; this.csvService.convertToCSV(votesWithDetails, keys);
+      this.csvService.downloadFile(csvData, &#x27;votes.csv&#x27;);
+    });
+  }
+
+  /**
+   * Downloads the games data as a CSV file.
+   */
+  downloadGamesCSV() {
+    this.games$.pipe(take(1)).subscribe((games) &#x3D;&gt; {
+      const formattedGames &#x3D; games.map(game &#x3D;&gt; {
+        const gameData: any &#x3D; { 
+          uuid: game.uuid,
+          gameDate: game.gameDate,
+          local: game.local,
+          visitor: game.visitor,
+          localRuns: game.localRuns,
+          visitorRuns: game.visitorRuns
+        };
+
+        // Adding local team details
+        if (gameData.local) {
+          gameData[&#x27;local uuid&#x27;] &#x3D; gameData.local.uuid;
+          gameData[&#x27;local name&#x27;] &#x3D; gameData.local.name;
+          gameData[&#x27;local imageUrl&#x27;] &#x3D; gameData.local.imageUrl;
+          gameData[&#x27;local story&#x27;] &#x3D; gameData.local.story;
+          delete gameData.local;
+        }
+
+        // Adding visitor team details
+        if (gameData.visitor) {
+          gameData[&#x27;visitor uuid&#x27;] &#x3D; gameData.visitor.uuid;
+          gameData[&#x27;visitor name&#x27;] &#x3D; gameData.visitor.name;
+          gameData[&#x27;visitor imageUrl&#x27;] &#x3D; gameData.visitor.imageUrl;
+          gameData[&#x27;visitor story&#x27;] &#x3D; gameData.visitor.story;
+          delete gameData.visitor;
+        }
+
+        return gameData;
+      });
+
+      const allKeys &#x3D; new Set&lt;string&gt;();
+      formattedGames.forEach(game &#x3D;&gt; {
+        Object.keys(game).forEach(key &#x3D;&gt; allKeys.add(key));
+      });
+
+      const orderedKeys &#x3D; [
+        &#x27;uuid&#x27;,
+        &#x27;gameDate&#x27;,
+        &#x27;local uuid&#x27;,
+        &#x27;local name&#x27;,
+        &#x27;local imageUrl&#x27;,
+        &#x27;local story&#x27;,
+        &#x27;visitor uuid&#x27;,
+        &#x27;visitor name&#x27;,
+        &#x27;visitor imageUrl&#x27;,
+        &#x27;visitor story&#x27;,
+        &#x27;localRuns&#x27;,
+        &#x27;visitorRuns&#x27;
+      ];
+
+      const csvData &#x3D; this.csvService.convertToCSV(formattedGames, orderedKeys);
+      this.csvService.downloadFile(csvData, &#x27;games.csv&#x27;);
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content [fullscreen]&#x3D;&quot;true&quot; class&#x3D;&quot;main-background&quot;&gt;
+  &lt;ion-header [translucent]&#x3D;&quot;true&quot;&gt;
+    &lt;app-toolbar&gt;&lt;/app-toolbar&gt;
+  &lt;/ion-header&gt;
+  &lt;ion-button fill&#x3D;&quot;clear&quot; aria-label&#x3D;&quot;New Game&quot; (click)&#x3D;&quot;onNewGame()&quot; shape&#x3D;&quot;round&quot; class&#x3D;&quot;rounde button&quot;&gt;
+    &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;add&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/ion-icon&gt;
+  &lt;/ion-button&gt;
+  &lt;ion-button fill&#x3D;&quot;solid&quot; (click)&#x3D;&quot;downloadVotesCSV()&quot; class&#x3D;&quot;button&quot;&gt;
+    {{ &#x27;games.downloadVotesCsv&#x27; | translate }}
+  &lt;/ion-button&gt;
+  &lt;ion-button fill&#x3D;&quot;solid&quot; (click)&#x3D;&quot;downloadGamesCSV()&quot; class&#x3D;&quot;button&quot;&gt;
+    {{ &#x27;games.downloadGamesCsv&#x27; | translate }}  &lt;/ion-button&gt;
+  &lt;ion-row&gt;
+    &lt;ion-col size&#x3D;&quot;12&quot; size-md&#x3D;&quot;6&quot; size-lg&#x3D;&quot;4&quot; size-xl&#x3D;&quot;3&quot; *ngFor&#x3D;&quot;let game of (games$ | async); let i &#x3D; index&quot;&gt;
+      &lt;app-game-info
+        [game]&#x3D;&quot;game&quot;
+        (onCardClicked)&#x3D;&quot;onCardClicked(game)&quot;
+        (onDeleteClicked)&#x3D;&quot;onDeleteClicked(game)&quot;&gt;
+      &lt;/app-game-info&gt;
+    &lt;/ion-col&gt;
+  &lt;/ion-row&gt;
+  &lt;ion-loading [isOpen]&#x3D;&quot;loading&quot; class&#x3D;&quot;custom-loading&quot; message&#x3D;&quot;Loading...&quot;&gt;&lt;/ion-loading&gt;
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./games.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+  
+  .rounde {
+    height: 5vh;
+    width: 4vw;
+    margin: 2%;
+    border-radius: 50px;
+  }
+  
+  .custom-loading {
+    --ion-color-primary: #7e4d32;
+  }
+  
+  ion-content {
+    --background: var(--ion-color-primaryGreen);
+  }
+  
+  Ion-icon {
+    color:var(--ion-color-textColorDark);
+    font-weight: bold;
+  }
+ion-button.button {
+  color:var(--ion-color-textColorDark);
+  --background: var(--ion-color-mediumEndCallToAction);
+  --background-hover: var(--ion-color-callToActionGreen);
+  --background-activated: var(--ion-color-callToActionGreen);
+  --background-focused: var(--ion-color-callToActionGreen);
+  transition: box-shadow 0.3s ease;
+  font-weight: bold;
+}
+ion-button.button:hover {
+  --background: var(--ion-color-callToActionGreen);
+  color:var(--ion-color-textColorDark);
+  box-shadow: 0 0 20px var(--ion-color-callToActionGreen);
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-content [fullscreen]="true" class="main-background">  <ion-header [translucent]="true">    <app-toolbar></app-toolbar>  </ion-header>  <ion-button fill="clear" aria-label="New Game" (click)="onNewGame()" shape="round" class="rounde button">    <ion-icon slot="icon-only" name="add" aria-hidden="true"></ion-icon>  </ion-button>  <ion-button fill="solid" (click)="downloadVotesCSV()" class="button">    {{ \'games.downloadVotesCsv\' | translate }}  </ion-button>  <ion-button fill="solid" (click)="downloadGamesCSV()" class="button">    {{ \'games.downloadGamesCsv\' | translate }}  </ion-button>  <ion-row>    <ion-col size="12" size-md="6" size-lg="4" size-xl="3" *ngFor="let game of (games$ | async); let i = index">      <app-game-info        [game]="game"        (onCardClicked)="onCardClicked(game)"        (onDeleteClicked)="onDeleteClicked(game)">      </app-game-info>    </ion-col>  </ion-row>  <ion-loading [isOpen]="loading" class="custom-loading" message="Loading..."></ion-loading></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToolbarComponent', 'selector': 'app-toolbar'},{'name': 'ErrorModalComponent', 'selector': 'app-error-modal'},{'name': 'GameDetailComponent', 'selector': 'app-game-detail'},{'name': 'GameInfoComponent', 'selector': 'app-game-info'},{'name': 'GamesPage', 'selector': 'app-games'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayerDetailComponent', 'selector': 'app-player-detail'},{'name': 'PlayerInfoComponent', 'selector': 'app-player-info'},{'name': 'PlayersPage', 'selector': 'app-players'},{'name': 'PositionSelectorComponent', 'selector': 'app-position-selector'},{'name': 'RegisterFormComponent', 'selector': 'app-register-form'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SettingsPage', 'selector': 'app-settings'},{'name': 'SplashPage', 'selector': 'app-splash'},{'name': 'TeamDetailComponent', 'selector': 'app-team-detail'},{'name': 'TeamInfoComponent', 'selector': 'app-team-info'},{'name': 'TeamsPage', 'selector': 'app-teams'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UsersAdminPage', 'selector': 'app-users-admin'}];
+    var DIRECTIVES = [{'name': 'PositionImageDirective', 'selector': '[positionImage]'}];
+    var ACTUAL_COMPONENT = {'name': 'GamesPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GamesPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

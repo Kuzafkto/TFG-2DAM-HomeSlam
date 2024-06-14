@@ -1,0 +1,1028 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>home-slam documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">home-slam documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >TeamService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/api/team.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>This service handles operations related to teams.</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_teams" >_teams</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#teams$" >teams$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#unsubscribe" >unsubscribe</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addTeam" >addTeam</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#deleteTeam" >deleteTeam</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getTeam" >getTeam</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateTeam" >updateTeam</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(api: <a href="../injectables/ApiService.html" target="_self">ApiService</a>, auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, firebaseSvc: <a href="../injectables/FirebaseService.html" target="_self">FirebaseService</a>, players: <a href="../injectables/PlayersService.html" target="_self">PlayersService</a>, firebaseAuth: <a href="../injectables/FirebaseAuthService.html" target="_self">FirebaseAuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/services/api/team.service.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of TeamService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>api</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to make API requests.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to handle authentication.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>firebaseSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FirebaseService.html" target="_self" >FirebaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to interact with Firebase.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>players</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PlayersService.html" target="_self" >PlayersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to handle player operations.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>firebaseAuth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FirebaseAuthService.html" target="_self" >FirebaseAuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Service to handle Firebase authentication.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addTeam"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>addTeam</b></span>
+                        <a href="#addTeam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addTeam(team: <a href="../interfaces/Team.html" target="_self">Team</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">src/app/core/services/api/team.service.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Adds a new team.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>team</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Team.html" target="_self" >Team</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The team to add.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Team.html" target="_self" >Observable&lt;Team&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An observable of the added team.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteTeam"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>deleteTeam</b></span>
+                        <a href="#deleteTeam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteTeam(team: <a href="../interfaces/Team.html" target="_self">Team</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="166"
+                                    class="link-to-prism">src/app/core/services/api/team.service.ts:166</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Deletes a team.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>team</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Team.html" target="_self" >Team</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The team to delete.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Team.html" target="_self" >Observable&lt;Team&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An observable of the deleted team.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTeam"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getTeam</b></span>
+                        <a href="#getTeam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTeam(uuid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/app/core/services/api/team.service.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves a team by its UUID.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>uuid</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The UUID of the team.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Team.html" target="_self" >Observable&lt;Team&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An observable of the team.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTeam"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>updateTeam</b></span>
+                        <a href="#updateTeam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateTeam(team: <a href="../interfaces/Team.html" target="_self">Team</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="124"
+                                    class="link-to-prism">src/app/core/services/api/team.service.ts:124</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates an existing team.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>team</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Team.html" target="_self" >Team</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The team to update.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;string[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An observable of the update operation.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_teams"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_teams</b></span>
+                        <a href="#_teams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>BehaviorSubject&lt;any[]&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;Team[]&gt;([])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/core/services/api/team.service.ts:23</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>BehaviorSubject to track the list of teams.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="teams$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>teams$</b></span>
+                        <a href="#teams$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;any[]&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this._teams.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/core/services/api/team.service.ts:28</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Observable for the list of teams.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unsubscribe"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>unsubscribe</b></span>
+                        <a href="#unsubscribe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Unsubscribe | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/services/api/team.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Unsubscribe function for Firebase listeners.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Unsubscribe } from &#x27;firebase/firestore&#x27;;
+import { BehaviorSubject, from, map, Observable, switchMap } from &#x27;rxjs&#x27;;
+import { Player } from &#x27;../../interfaces/player&#x27;;
+import { Team } from &#x27;../../interfaces/team&#x27;;
+import { FirebaseDocument, FirebaseService } from &#x27;../firebase/firebase.service&#x27;;
+import { ApiService } from &#x27;./api.service&#x27;;
+import { AuthService } from &#x27;./auth.service&#x27;;
+import { FirebaseAuthService } from &#x27;./firebase/firebase-auth.service&#x27;;
+import { PlayersService } from &#x27;./player.service&#x27;;
+
+/**
+ * This service handles operations related to teams.
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class TeamService {
+
+  /**
+   * BehaviorSubject to track the list of teams.
+   */
+  private _teams: BehaviorSubject&lt;any[]&gt; &#x3D; new BehaviorSubject&lt;Team[]&gt;([]);
+
+  /**
+   * Observable for the list of teams.
+   */
+  public teams$: Observable&lt;any[]&gt; &#x3D; this._teams.asObservable();
+
+  /**
+   * Unsubscribe function for Firebase listeners.
+   */
+  private unsubscribe: Unsubscribe | null &#x3D; null;
+
+  /**
+   * Creates an instance of TeamService.
+   * 
+   * @param api Service to make API requests.
+   * @param auth Service to handle authentication.
+   * @param firebaseSvc Service to interact with Firebase.
+   * @param players Service to handle player operations.
+   * @param firebaseAuth Service to handle Firebase authentication.
+   */
+  constructor(
+    private api: ApiService,
+    private auth: AuthService,
+    private firebaseSvc: FirebaseService,
+    private players: PlayersService,
+    private firebaseAuth: FirebaseAuthService
+  ) {
+    this.teams$ &#x3D; this.firebaseSvc.teams$;
+  }
+
+  /**
+   * Retrieves a team by its UUID.
+   * 
+   * @param uuid The UUID of the team.
+   * @returns An observable of the team.
+   */
+  public getTeam(uuid: string): Observable&lt;Team&gt; {
+    return from(this.firebaseSvc.getDocument(&quot;teams&quot;, uuid)).pipe(
+      switchMap((doc: FirebaseDocument) &#x3D;&gt; {
+        // Obtener los jugadores del equipo
+        const playerUUIDs: string[] &#x3D; doc.data[&#x27;players&#x27;].map((player: any) &#x3D;&gt; player.uuid);
+        // Obtener todos los jugadores y filtrar los del equipo
+        return this.players.getAll().pipe(
+          map((allPlayers: Player[]) &#x3D;&gt; {
+            const teamPlayers: Player[] &#x3D; allPlayers.filter(player &#x3D;&gt; {
+              // Verificar si uuid es undefined antes de usarlo
+              if (player.uuid !&#x3D;&#x3D; undefined) {
+                return playerUUIDs.includes(player.uuid);
+              }
+              return false;
+            });
+            // Crear el objeto Team con los jugadores filtrados
+            const payload: Team &#x3D; {
+              uuid: doc.id,
+              name: doc.data[&#x27;name&#x27;],
+              players: teamPlayers,
+              trainers: doc.data[&#x27;trainers&#x27;].map((trainer: { uuid: any; }) &#x3D;&gt; ({ uuid: trainer.uuid })),
+              story: doc.data[&#x27;story&#x27;],
+              imageUrl: doc.data[&#x27;imageUrl&#x27;]
+            };
+            return payload;
+          })
+        );
+      })
+    );
+  }
+
+  /**
+   * Adds a new team.
+   * 
+   * @param team The team to add.
+   * @returns An observable of the added team.
+   */
+  public addTeam(team: Team): Observable&lt;Team&gt; {
+    return from(this.firebaseSvc.createDocument(&quot;teams&quot;, team)).pipe(
+      switchMap((createdDocId: string) &#x3D;&gt; {
+        // Obtener los UUID de los jugadores del equipo
+        let playerUUIDs: string[] &#x3D; [];
+        team.players.forEach(player &#x3D;&gt; {
+          if (player.uuid) {
+            playerUUIDs.push(player.uuid);
+          }
+        });
+        // Actualizar el campo &#x27;players&#x27; del documento del equipo con los UUID de los jugadores
+        return from(this.firebaseSvc.updateDocumentField(&quot;teams&quot;, createdDocId, &quot;players&quot;, playerUUIDs)).pipe(
+          map(() &#x3D;&gt; {
+            team.uuid &#x3D; createdDocId;
+            return team; // devolver el equipo creado después de la actualización
+          })
+        );
+      })
+    );
+  }
+
+  /**
+   * Updates an existing team.
+   * 
+   * @param team The team to update.
+   * @returns An observable of the update operation.
+   */
+  public updateTeam(team: Team): Observable&lt;string[]&gt; {
+    return new Observable&lt;string[]&gt;(obs &#x3D;&gt; {
+      if (team.uuid) {
+        // Inicializar un array para almacenar los UUID de los jugadores
+        const playerUUIDs: string[] &#x3D; [];
+        
+        // Recorrer los jugadores y agregar sus UUID al array
+        team.players.forEach(player &#x3D;&gt; {
+          if (player.uuid) {
+            playerUUIDs.push(player.uuid);
+          }
+        });
+        
+        // Actualizar el campo &#x27;players&#x27; con el nuevo array de UUID
+        from(this.firebaseSvc.updateDocumentField(&quot;teams&quot;, team.uuid, &quot;players&quot;, playerUUIDs))
+          .subscribe({
+            next: _ &#x3D;&gt; {
+              obs.next(playerUUIDs); // Devolver el array de UUID
+            },
+            error: error &#x3D;&gt; {
+              obs.error(error);
+            }
+          });
+      } else {
+        obs.error(new Error(&quot;Team does not have UUID&quot;));
+      }
+      if(team.uuid){
+        this.firebaseSvc.updateDocumentField(&quot;teams&quot;,team.uuid,&quot;name&quot;,team.name);
+        this.firebaseSvc.updateDocumentField(&quot;teams&quot;,team.uuid,&quot;story&quot;,team.story);
+        this.firebaseSvc.updateDocumentField(&quot;teams&quot;,team.uuid,&quot;imageUrl&quot;,team.imageUrl);
+      }
+      else
+        obs.error(new Error(&quot;Team does not have UUID&quot;));
+    });
+  }
+
+  /**
+   * Deletes a team.
+   * 
+   * @param team The team to delete.
+   * @returns An observable of the deleted team.
+   */
+  public deleteTeam(team: Team): Observable&lt;Team&gt; {
+    return new Observable&lt;Team&gt;(obs &#x3D;&gt; {
+      if (!team.uuid) {
+        obs.error(new Error(&quot;Team does not have UUID&quot;));
+        return;
+      }
+  
+      // Eliminar el equipo de la colección &quot;teams&quot;
+      from(this.firebaseSvc.deleteDocument(&quot;teams&quot;, team.uuid)).subscribe({
+        next: () &#x3D;&gt; {
+          obs.next(team); // Devolver el equipo eliminado en el observable
+          obs.complete();
+        },
+        error: error &#x3D;&gt; {
+          obs.error(error); // Propagar cualquier error que ocurra durante el proceso
+        }
+      });
+    });
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'TeamService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

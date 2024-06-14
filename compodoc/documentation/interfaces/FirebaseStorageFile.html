@@ -1,0 +1,1017 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>home-slam documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">home-slam documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  FirebaseStorageFile</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/firebase/firebase.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interface representing a file in Firebase Storage.
+This interface is used to define the structure of a file object that is stored in Firebase Storage.</p>
+
+            </p>
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#file" 
+>
+                                            file
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#path" 
+>
+                                            path
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="file"></a>
+                                        <span class="name "><b>file</b>
+                                            <a href="#file">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>file:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The URL or reference to the actual file in Firebase Storage.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="path"></a>
+                                        <span class="name "><b>path</b>
+                                            <a href="#path">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>path:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The path in Firebase Storage where the file is stored.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
+import { BehaviorSubject, Observable, from, of, switchMap, map, take, toArray } from &quot;rxjs&quot;;
+import { initializeApp, getApp, FirebaseApp } from &quot;firebase/app&quot;;
+import { getFirestore, addDoc, collection, updateDoc, doc, onSnapshot, getDoc, setDoc, query, where, getDocs, Unsubscribe, DocumentData, deleteDoc, Firestore } from &quot;firebase/firestore&quot;;
+import { getStorage, ref, getDownloadURL, uploadBytes, FirebaseStorage } from &quot;firebase/storage&quot;;
+import { createUserWithEmailAndPassword, deleteUser, signInAnonymously, signOut, signInWithEmailAndPassword, initializeAuth, indexedDBLocalPersistence, UserCredential, Auth, User } from &quot;firebase/auth&quot;;
+
+/**
+ * Interface representing a file in Firebase Storage.
+ * This interface is used to define the structure of a file object that is stored in Firebase Storage.
+ */
+export interface FirebaseStorageFile {
+  /**
+   * The path in Firebase Storage where the file is stored.
+   */
+  path: string;
+
+  /**
+   * The URL or reference to the actual file in Firebase Storage.
+   */
+  file: string;
+}
+
+/**
+ * Interface representing a document in Firestore.
+ * This interface is used to define the structure of a document object that is stored in Firestore.
+ */
+export interface FirebaseDocument {
+  /**
+   * The unique identifier of the document in Firestore.
+   */
+  id: string;
+
+  /**
+   * The data contained in the document. This can be of any type and represents the fields and values stored in the document.
+   */
+  data: DocumentData;
+}
+
+
+/**
+ * Interface representing a user credential in Firebase Authentication.
+ * This interface is used to define the structure of a user credential object that is returned
+ * after a successful authentication operation (e.g., sign-in, sign-up) with Firebase Authentication.
+ */
+export interface FirebaseUserCredential {
+  /**
+   * The user credential object provided by Firebase Authentication.
+   * This includes details about the authenticated user and authentication tokens.
+   */
+  user: UserCredential;
+}
+
+
+/**
+ * This service handles interactions with Firebase, including authentication, Firestore operations, and storage.
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class FirebaseService {
+  private _app!: FirebaseApp;  // Firebase app instance
+  private _db!: Firestore;  // Firestore instance
+  private _auth!: Auth;  // Firebase Auth instance
+  private _webStorage!: FirebaseStorage;  // Firebase Storage instance
+  private _user: User | null &#x3D; null;  // Currently authenticated user
+
+  // BehaviorSubjects to track various states and data
+  private _isLogged: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
+  public isLogged$: Observable&lt;boolean&gt; &#x3D; this._isLogged.asObservable();
+  private _players: BehaviorSubject&lt;any[]&gt; &#x3D; new BehaviorSubject&lt;any[]&gt;([]);
+  public players$: Observable&lt;any[]&gt; &#x3D; this._players.asObservable();
+  private _teams: BehaviorSubject&lt;any[]&gt; &#x3D; new BehaviorSubject&lt;any[]&gt;([]);
+  public teams$: Observable&lt;any[]&gt; &#x3D; this._teams.asObservable();
+  private _games: BehaviorSubject&lt;any[]&gt; &#x3D; new BehaviorSubject&lt;any[]&gt;([]);
+  public games$: Observable&lt;any[]&gt; &#x3D; this._games.asObservable();
+  private _votes: BehaviorSubject&lt;any[]&gt; &#x3D; new BehaviorSubject&lt;any[]&gt;([]);
+  public votes$: Observable&lt;any[]&gt; &#x3D; this._votes.asObservable();
+  private _users: BehaviorSubject&lt;any[]&gt; &#x3D; new BehaviorSubject&lt;any[]&gt;([]);
+  public users$: Observable&lt;any[]&gt; &#x3D; this._users.asObservable();
+  private _isAdmin: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
+  public isAdmin$: Observable&lt;boolean&gt; &#x3D; this._isAdmin.asObservable();
+  private _isOwner: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
+  public isOwner$: Observable&lt;boolean&gt; &#x3D; this._isOwner.asObservable();
+
+  /**
+   * Creates an instance of FirebaseService.
+   * @param config The Firebase configuration object.
+   */
+  constructor(
+    @Inject(&#x27;firebase-config&#x27;) config: any
+  ) {
+    this.init(config);
+  }
+
+  /**
+   * Initializes the Firebase app, Firestore, authentication, and storage.
+   * @param firebaseConfig The Firebase configuration object.
+   */
+  public init(firebaseConfig: any) {
+    this._app &#x3D; initializeApp(firebaseConfig);
+    this._db &#x3D; getFirestore(this._app);
+    this._webStorage &#x3D; getStorage(this._app);
+    this._auth &#x3D; initializeAuth(getApp(), { persistence: indexedDBLocalPersistence });
+    this._auth.onAuthStateChanged(async user &#x3D;&gt; {
+      this._user &#x3D; user;
+      if (user) {
+        if (user.uid &amp;&amp; user.email) {
+          this._isLogged.next(true);
+          // Subscribe to collections
+          console.log(user.uid, &quot;User ID:&quot;, user.email);
+          this.subscribeToPlayers(this._players, (el: any) &#x3D;&gt; el);
+          this.subscribeToTeams(this._teams, (el: any) &#x3D;&gt; el, this._players);
+          this.subscribeToGames(this._games, (el: any) &#x3D;&gt; el, this._teams);
+          this.subscribeToVotes(this._votes, (el: any) &#x3D;&gt; el);
+          this.subscribeToUsers(this._users, this.mapUser);
+          this.checkUserStatus(user.uid);
+        }
+      } else {
+        this._isLogged.next(false);
+        this._isAdmin.next(false);
+      }
+    });
+  }
+
+  /**
+   * Returns the currently authenticated user.
+   * @returns The currently authenticated user or null.
+   */
+  public get user(): User | null {
+    return this._user;
+  }
+
+  /**
+   * Checks the status of the user and updates admin and owner status accordingly.
+   * @param userId The ID of the user to check.
+   */
+  private checkUserStatus(userId: string) {
+    const userDocRef &#x3D; doc(this._db, &#x27;users&#x27;, userId);
+    onSnapshot(userDocRef, (doc) &#x3D;&gt; {
+      if (doc.exists()) {
+        const userData &#x3D; doc.data();
+        this._isAdmin.next(userData[&quot;isAdmin&quot;] &#x3D;&#x3D;&#x3D; true);
+        this._isOwner.next(userData[&quot;isOwner&quot;] &#x3D;&#x3D;&#x3D; true);
+      } else {
+        this._isAdmin.next(false);
+        this._isOwner.next(false);
+      }
+    });
+  }
+
+  /**
+   * Uploads a file to Firebase Storage.
+   * @param blob The file to upload as a Blob.
+   * @param mimeType The MIME type of the file.
+   * @param path The path in Firebase Storage to upload the file to.
+   * @param prefix A prefix for the file name.
+   * @param extension The file extension.
+   * @returns A promise that resolves to the uploaded file&#x27;s metadata.
+   */
+  public fileUpload(blob: Blob, mimeType: string, path: string, prefix: string, extension: string): Promise&lt;FirebaseStorageFile&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      if (!this._webStorage || !this._auth) {
+        reject({ msg: &quot;Not connected to FireStorage&quot; });
+      }
+      var freeConnection &#x3D; false;
+      if (this._auth &amp;&amp; !this._auth.currentUser) {
+        try {
+          await signInAnonymously(this._auth);
+          freeConnection &#x3D; true;
+        } catch (error) {
+          reject(error);
+        }
+      }
+      const url &#x3D; path + &quot;/&quot; + prefix + &quot;-&quot; + Date.now() + extension;
+      const storageRef &#x3D; ref(this._webStorage!, url);
+      const metadata &#x3D; { contentType: mimeType };
+      uploadBytes(storageRef, blob).then(async (snapshot) &#x3D;&gt; {
+        getDownloadURL(storageRef).then(async downloadURL &#x3D;&gt; {
+          if (freeConnection) await signOut(this._auth!);
+          resolve({ path, file: downloadURL });
+        }).catch(async error &#x3D;&gt; {
+          if (freeConnection) await signOut(this._auth!);
+          reject(error);
+        });
+      }).catch(async (error) &#x3D;&gt; {
+        if (freeConnection) await signOut(this._auth!);
+        reject(error);
+      });
+    });
+  }
+
+  /**
+   * Uploads an image to Firebase Storage.
+   * @param blob The image file as a Blob.
+   * @returns A promise that resolves to the uploaded image&#x27;s metadata.
+   */
+  public imageUpload(blob: Blob): Promise&lt;any&gt; {
+    return this.fileUpload(blob, &#x27;image/jpeg&#x27;, &#x27;images&#x27;, &#x27;image&#x27;, &quot;.jpg&quot;);
+  }
+
+  /**
+   * Creates a new document in a Firestore collection.
+   * @param collectionName The name of the collection to create the document in.
+   * @param data The data to include in the document.
+   * @returns A promise that resolves to the ID of the created document.
+   */
+  public createDocument(collectionName: string, data: any): Promise&lt;string&gt; {
+    return new Promise((resolve, reject) &#x3D;&gt; {
+      if (!this._db) {
+        reject({ msg: &quot;Database is not connected&quot; });
+      }
+      const collectionRef &#x3D; collection(this._db!, collectionName);
+      addDoc(collectionRef, data).then(docRef &#x3D;&gt; resolve(docRef.id)).catch(err &#x3D;&gt; reject(err));
+    });
+  }
+
+  /**
+   * Creates a new document with a specified ID in a Firestore collection.
+   * @param collectionName The name of the collection to create the document in.
+   * @param data The data to include in the document.
+   * @param docId The ID to assign to the document.
+   * @returns A promise that resolves when the document is created.
+   */
+  public createDocumentWithId(collectionName: string, data: any, docId: string): Promise&lt;void&gt; {
+    return new Promise((resolve, reject) &#x3D;&gt; {
+      if (!this._db) {
+        reject({ msg: &#x27;Database is not connected&#x27; });
+      }
+      const docRef &#x3D; doc(this._db!, collectionName, docId);
+      setDoc(docRef, data).then(() &#x3D;&gt; resolve()).catch((err) &#x3D;&gt; reject(err));
+    });
+  }
+
+  /**
+   * Updates an existing document in a Firestore collection.
+   * @param collectionName The name of the collection.
+   * @param data The data to update the document with.
+   * @param document The ID of the document to update.
+   * @returns A promise that resolves when the document is updated.
+   */
+  public updateDocument(collectionName: string, data: any, document: string): Promise&lt;void&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      if (!this._db) {
+        reject({ msg: &quot;Database is not connected&quot; });
+      }
+      const collectionRef &#x3D; collection(this._db!, collectionName);
+      updateDoc(doc(collectionRef, document), data).then(docRef &#x3D;&gt; resolve()).catch(err &#x3D;&gt; reject(err));
+    });
+  }
+
+  /**
+   * Retrieves all documents from a Firestore collection.
+   * @param collectionName The name of the collection to retrieve documents from.
+   * @returns A promise that resolves to an array of documents.
+   */
+  public getDocuments(collectionName: string): Promise&lt;FirebaseDocument[]&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      if (!this._db) {
+        reject({ msg: &quot;Database is not connected&quot; });
+      }
+      const querySnapshot &#x3D; await getDocs(collection(this._db!, collectionName));
+      resolve(querySnapshot.docs.map&lt;FirebaseDocument&gt;(doc &#x3D;&gt; ({ id: doc.id, data: doc.data() })));
+    });
+  }
+
+  /**
+   * Retrieves a specific document from a Firestore collection.
+   * @param collectionName The name of the collection.
+   * @param document The ID of the document to retrieve.
+   * @returns A promise that resolves to the retrieved document.
+   */
+  public getDocument(collectionName: string, document: string): Promise&lt;FirebaseDocument&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      if (!this._db) {
+        reject({ msg: &quot;Database is not connected&quot; });
+      }
+      const docRef &#x3D; doc(this._db!, collectionName, document);
+      const docSnap &#x3D; await getDoc(docRef);
+      if (docSnap.exists()) {
+        resolve({ id: docSnap.id, data: docSnap.data() });
+      } else {
+        reject(&#x27;Document does not exist&#x27;);
+      }
+    });
+  }
+
+  /**
+   * Retrieves documents from a Firestore collection that match a specific field value.
+   * @param collectionName The name of the collection.
+   * @param field The field to filter by.
+   * @param value The value to filter by.
+   * @returns A promise that resolves to an array of matching documents.
+   */
+  public getDocumentsBy(collectionName: string, field: string, value: any): Promise&lt;FirebaseDocument[]&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      if (!this._db) {
+        reject({ msg: &quot;Database is not connected&quot; });
+      }
+      const q &#x3D; query(collection(this._db!, collectionName), where(field, &quot;&#x3D;&#x3D;&quot;, value));
+      const querySnapshot &#x3D; await getDocs(q);
+      resolve(querySnapshot.docs.map&lt;FirebaseDocument&gt;(doc &#x3D;&gt; ({ id: doc.id, data: doc.data() })));
+    });
+  }
+
+  /**
+   * Deletes a specific document from a Firestore collection.
+   * @param collectionName The name of the collection.
+   * @param docId The ID of the document to delete.
+   * @returns A promise that resolves when the document is deleted.
+   */
+  public deleteDocument(collectionName: string, docId: string): Promise&lt;void&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      if (!this._db) {
+        reject({ msg: &quot;Database is not connected&quot; });
+      }
+      resolve(await deleteDoc(doc(this._db!, collectionName, docId)));
+    });
+  }
+
+  /**
+   * Subscribes to a Firestore collection and updates a BehaviorSubject with the collection data.
+   * @param collectionName The name of the collection to subscribe to.
+   * @param subject The BehaviorSubject to update with the collection data.
+   * @param mapFunction A function to map the document data to a specific format.
+   * @returns An unsubscribe function to stop the subscription.
+   */
+  public subscribeToCollection(collectionName: string, subject: BehaviorSubject&lt;any[]&gt;, mapFunction: (el: FirebaseDocument) &#x3D;&gt; any): Unsubscribe | null {
+    if (!this._db) {
+      return null;
+    }
+    return onSnapshot(collection(this._db, collectionName), (snapshot) &#x3D;&gt; {
+      subject.next(snapshot.docs.map&lt;FirebaseDocument&gt;(doc &#x3D;&gt; ({ id: doc.id, data: doc.data() })).map(mapFunction));
+    }, error &#x3D;&gt; { });
+  }
+
+  /**
+   * Signs out the current user.
+   * @param signInAnon Whether to sign in anonymously after signing out.
+   * @returns A promise that resolves when the user is signed out.
+   */
+  public signOut(signInAnon: boolean &#x3D; false): Promise&lt;void&gt; {
+    return new Promise&lt;void&gt;(async (resolve, reject) &#x3D;&gt; {
+      if (this._auth) {
+        try {
+          await this._auth.signOut();
+          if (signInAnon) await this.connectAnonymously();
+          resolve();
+        } catch (error) {
+          reject(error);
+        }
+      }
+    });
+  }
+
+  /**
+   * Checks if a user is currently connected.
+   * @returns A promise that resolves to a boolean indicating if a user is connected.
+   */
+  public isUserConnected(): Promise&lt;boolean&gt; {
+    const response &#x3D; new Promise&lt;boolean&gt;(async (resolve, reject) &#x3D;&gt; {
+      if (!this._auth) {
+        resolve(false);
+      }
+      resolve(this._auth!.currentUser !&#x3D; null);
+    });
+    return response;
+  }
+
+  /**
+   * Checks if a user is currently connected anonymously.
+   * @returns A promise that resolves to a boolean indicating if a user is connected anonymously.
+   */
+  public isUserConnectedAnonymously(): Promise&lt;boolean&gt; {
+    const response &#x3D; new Promise&lt;boolean&gt;(async (resolve, reject) &#x3D;&gt; {
+      if (!this._auth) {
+        resolve(false);
+      }
+      resolve(this._auth!.currentUser !&#x3D; null &amp;&amp; this._auth!.currentUser.isAnonymous);
+    });
+    return response;
+  }
+
+  /**
+   * Connects a user anonymously.
+   * @returns A promise that resolves when the user is connected anonymously.
+   */
+  public connectAnonymously(): Promise&lt;void&gt; {
+    const response &#x3D; new Promise&lt;void&gt;(async (resolve, reject) &#x3D;&gt; {
+      if (!this._auth) {
+        resolve();
+      }
+      if (!(await this.isUserConnected()) &amp;&amp; !(await this.isUserConnectedAnonymously())) {
+        await signInAnonymously(this._auth!).catch(error &#x3D;&gt; reject(error));
+        resolve();
+      } else if (await this.isUserConnectedAnonymously()) {
+        resolve();
+      } else {
+        reject({ msg: &quot;A user is already connected&quot; });
+      }
+    });
+    return response;
+  }
+
+  /**
+   * Creates a new user with an email and password.
+   * @param email The email of the new user.
+   * @param password The password of the new user.
+   * @returns A promise that resolves to the created user&#x27;s credentials.
+   */
+  public createUserWithEmailAndPassword(email: string, password: string): Promise&lt;FirebaseUserCredential | null&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      if (!this._auth) {
+        resolve(null);
+      }
+      try {
+        resolve({ user: await createUserWithEmailAndPassword(this._auth!, email, password) });
+      } catch (error: any) {
+        switch (error.code) {
+          case &#x27;auth/email-already-in-use&#x27;:
+            console.log(&#x60;Email address ${email} already in use.&#x60;);
+            break;
+          case &#x27;auth/invalid-email&#x27;:
+            console.log(&#x60;Email address ${email} is invalid.&#x60;);
+            break;
+          case &#x27;auth/operation-not-allowed&#x27;:
+            console.log(&#x60;Error during sign up.&#x60;);
+            break;
+          case &#x27;auth/weak-password&#x27;:
+            console.log(&quot;Password is not strong enough. Add additional characters including special characters and numbers.&quot;);
+            break;
+          default:
+            console.log(error.message);
+            break;
+        }
+        reject(error);
+      }
+    });
+  }
+
+  /**
+   * Connects a user with an email and password.
+   * @param email The email of the user.
+   * @param password The password of the user.
+   * @returns A promise that resolves to the connected user&#x27;s credentials.
+   */
+  public connectUserWithEmailAndPassword(email: string, password: string): Promise&lt;FirebaseUserCredential | null&gt; {
+    return new Promise&lt;FirebaseUserCredential | null&gt;(async (resolve, reject) &#x3D;&gt; {
+      if (!this._auth) {
+        resolve(null);
+      }
+      resolve({ user: await signInWithEmailAndPassword(this._auth!, email, password) });
+    });
+  }
+
+  /**
+   * Deletes the currently authenticated user.
+   * @returns A promise that resolves when the user is deleted.
+   */
+  public deleteUser(): Promise&lt;void&gt; {
+    return new Promise&lt;void&gt;((resolve, reject) &#x3D;&gt; {
+      if (!this._user) {
+        reject();
+      }
+      resolve(deleteUser(this._user!));
+    });
+  }
+
+  /**
+   * Updates a specific field in a document in a Firestore collection.
+   * @param collectionName The name of the collection.
+   * @param document The ID of the document to update.
+   * @param fieldName The name of the field to update.
+   * @param fieldValue The value to update the field with.
+   * @returns A promise that resolves when the field is updated.
+   */
+  public updateDocumentField(collectionName: string, document: string, fieldName: string, fieldValue: any): Promise&lt;void&gt; {
+    return new Promise(async (resolve, reject) &#x3D;&gt; {
+      if (!this._db) {
+        reject({ msg: &quot;Database is not connected&quot; });
+      }
+      const documentRef &#x3D; doc(this._db as Firestore, collectionName, document);
+      const fieldUpdate &#x3D; { [fieldName]: fieldValue };
+      try {
+        await updateDoc(documentRef, fieldUpdate);
+        resolve();
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  /**
+   * Maps a Firestore document to a user object.
+   * @param doc The Firestore document data.
+   * @returns The mapped user object.
+   */
+  public mapUser(doc: DocumentData): any {
+    return {
+      email: doc[&#x27;email&#x27;],
+      name: doc[&#x27;name&#x27;],
+      nickname: doc[&#x27;nickname&#x27;],
+      picture: doc[&#x27;picture&#x27;],
+      isAdmin: doc[&#x27;isAdmin&#x27;],
+      isOwner: doc[&#x27;isOwner&#x27;],
+      uuid: doc[&quot;id&quot;]
+    };
+  }
+
+  /**
+   * Subscribes to the players collection in Firestore.
+   * @param subject The BehaviorSubject to update with the players data.
+   * @param mapFunction A function to map the document data to a specific format.
+   * @returns An unsubscribe function to stop the subscription.
+   */
+  public async subscribeToPlayers(subject: BehaviorSubject&lt;any[]&gt;, mapFunction: (el: DocumentData) &#x3D;&gt; any): Promise&lt;Unsubscribe | null&gt; {
+    if (!this._db) {
+      return null;
+    }
+    try {
+      const playersRef &#x3D; collection(this._db, &quot;players&quot;);
+      const unsubscribePlayers &#x3D; onSnapshot(playersRef, (snapshot) &#x3D;&gt; {
+        const players &#x3D; snapshot.docs.map(doc &#x3D;&gt; {
+          const playerData &#x3D; mapFunction(doc.data());
+          playerData.uuid &#x3D; doc.id;
+          return playerData;
+        });
+        subject.next(players);
+      }, (error) &#x3D;&gt; {
+        console.error(&#x27;Error in onSnapshot:&#x27;, error);
+      });
+      return unsubscribePlayers;
+    } catch (error) {
+      console.error(&#x27;Error:&#x27;, error);
+      return null;
+    }
+  }
+
+  /**
+   * Subscribes to the users collection in Firestore.
+   * @param subject The BehaviorSubject to update with the users data.
+   * @param mapFunction A function to map the document data to a specific format.
+   * @returns An unsubscribe function to stop the subscription.
+   */
+  public async subscribeToUsers(subject: BehaviorSubject&lt;any[]&gt;, mapFunction: (el: DocumentData) &#x3D;&gt; any): Promise&lt;Unsubscribe | null&gt; {
+    if (!this._db) {
+      return null;
+    }
+    try {
+      const usersRef &#x3D; collection(this._db, &quot;users&quot;);
+      const unsubscribeUsers &#x3D; onSnapshot(usersRef, (snapshot) &#x3D;&gt; {
+        const users &#x3D; snapshot.docs.map(doc &#x3D;&gt; {
+          const userData &#x3D; mapFunction(doc.data());
+          userData.uuid &#x3D; doc.id;
+          return userData;
+        });
+        subject.next(users);
+      }, (error) &#x3D;&gt; {
+        console.error(&#x27;Error in onSnapshot:&#x27;, error);
+      });
+      return unsubscribeUsers;
+    } catch (error) {
+      console.error(&#x27;Error:&#x27;, error);
+      return null;
+    }
+  }
+
+  /**
+   * Subscribes to the teams collection in Firestore.
+   * @param subject The BehaviorSubject to update with the teams data.
+   * @param mapFunction A function to map the document data to a specific format.
+   * @param playersSubject The BehaviorSubject to update with the players data.
+   * @returns An unsubscribe function to stop the subscription.
+   */
+  public async subscribeToTeams(subject: BehaviorSubject&lt;any[]&gt;, mapFunction: (el: DocumentData) &#x3D;&gt; any, playersSubject: BehaviorSubject&lt;any[]&gt;): Promise&lt;Unsubscribe | null&gt; {
+    if (!this._db) {
+      return null;
+    }
+    try {
+      const teamsRef &#x3D; collection(this._db, &quot;teams&quot;);
+      const unsubscribeTeams &#x3D; onSnapshot(teamsRef, async (snapshot) &#x3D;&gt; {
+        const teams &#x3D; snapshot.docs.map(doc &#x3D;&gt; {
+          const teamData &#x3D; mapFunction(doc.data());
+          teamData.uuid &#x3D; doc.id;
+          return teamData;
+        });
+        console.log(&#x27;Teams:&#x27;, teams);
+
+        // Get players for each team based on player&#x27;s UUID
+        playersSubject.pipe(take(1)).subscribe(players &#x3D;&gt; {
+          teams.forEach(team &#x3D;&gt; {
+            if (Array.isArray(team.players)) {
+              const teamPlayers &#x3D; players.filter(player &#x3D;&gt; team.players.includes(player.uuid));
+              team.players &#x3D; teamPlayers;
+            } else {
+              team.players &#x3D; []; // Initialize as an empty array if no players property
+            }
+          });
+          console.log(&#x27;Updated teams:&#x27;, teams);
+          subject.next(teams);
+        });
+      }, (error) &#x3D;&gt; {
+        console.error(&#x27;Error in onSnapshot:&#x27;, error);
+      });
+      return unsubscribeTeams;
+    } catch (error) {
+      console.error(&#x27;Error:&#x27;, error);
+      return null;
+    }
+  }
+
+  /**
+   * Subscribes to the games collection in Firestore.
+   * @param subject The BehaviorSubject to update with the games data.
+   * @param mapFunction A function to map the document data to a specific format.
+   * @param teamsSubject The BehaviorSubject to update with the teams data.
+   * @returns An unsubscribe function to stop the subscription.
+   */
+  public async subscribeToGames(subject: BehaviorSubject&lt;any[]&gt;, mapFunction: (el: DocumentData) &#x3D;&gt; any, teamsSubject: BehaviorSubject&lt;any[]&gt;): Promise&lt;Unsubscribe | null&gt; {
+    if (!this._db) {
+      return null;
+    }
+    try {
+      const gamesRef &#x3D; collection(this._db, &quot;games&quot;);
+      const unsubscribeGames &#x3D; onSnapshot(gamesRef, async (snapshot) &#x3D;&gt; {
+        const games &#x3D; snapshot.docs.map(doc &#x3D;&gt; {
+          const gameData &#x3D; mapFunction(doc.data());
+          gameData.uuid &#x3D; doc.id;
+          return gameData;
+        });
+
+        // Map teams to games
+        teamsSubject.pipe(take(1)).subscribe(teams &#x3D;&gt; {
+          games.forEach(game &#x3D;&gt; {
+            game.local &#x3D; teams.find(team &#x3D;&gt; team.uuid &#x3D;&#x3D;&#x3D; game.local) || null;
+            game.visitor &#x3D; teams.find(team &#x3D;&gt; team.uuid &#x3D;&#x3D;&#x3D; game.visitor) || null;
+          });
+          subject.next(games);
+        });
+      }, (error) &#x3D;&gt; {
+        console.error(&#x27;Error in onSnapshot:&#x27;, error);
+      });
+      return unsubscribeGames;
+    } catch (error) {
+      console.error(&#x27;Error:&#x27;, error);
+      return null;
+    }
+  }
+
+  /**
+   * Subscribes to the votes collection in Firestore.
+   * @param subject The BehaviorSubject to update with the votes data.
+   * @param mapFunction A function to map the document data to a specific format.
+   * @returns An unsubscribe function to stop the subscription.
+   */
+  public async subscribeToVotes(subject: BehaviorSubject&lt;any[]&gt;, mapFunction: (el: DocumentData) &#x3D;&gt; any): Promise&lt;Unsubscribe | null&gt; {
+    if (!this._db) {
+      return null;
+    }
+    try {
+      const votesRef &#x3D; collection(this._db, &quot;votes&quot;);
+      const unsubscribeVotes &#x3D; onSnapshot(votesRef, (snapshot) &#x3D;&gt; {
+        const votes &#x3D; snapshot.docs.map(doc &#x3D;&gt; {
+          const voteData &#x3D; mapFunction(doc.data());
+          voteData.uuid &#x3D; doc.id;
+          return voteData;
+        });
+        subject.next(votes);
+      }, (error) &#x3D;&gt; {
+        console.error(&#x27;Error in onSnapshot:&#x27;, error);
+      });
+      return unsubscribeVotes;
+    } catch (error) {
+      console.error(&#x27;Error:&#x27;, error);
+      return null;
+    }
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'FirebaseStorageFile.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

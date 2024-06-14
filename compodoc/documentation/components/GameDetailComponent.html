@@ -1,0 +1,2388 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>home-slam documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">home-slam documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  GameDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/game-detail/game-detail.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-game-detail</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./game-detail.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./game-detail.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allTeams" >allTeams</a>
+                            </li>
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                            <li>
+                                <a href="#gameTitle" >gameTitle</a>
+                            </li>
+                            <li>
+                                <a href="#initialFormValues" >initialFormValues</a>
+                            </li>
+                            <li>
+                                <a href="#localTeamImageUrl" >localTeamImageUrl</a>
+                            </li>
+                            <li>
+                                <a href="#localTeamName" >localTeamName</a>
+                            </li>
+                            <li>
+                                <a href="#mode" >mode</a>
+                            </li>
+                            <li>
+                                <a href="#uuid" >uuid</a>
+                            </li>
+                            <li>
+                                <a href="#visitorTeamImageUrl" >visitorTeamImageUrl</a>
+                            </li>
+                            <li>
+                                <a href="#visitorTeamName" >visitorTeamName</a>
+                            </li>
+                            <li>
+                                <a href="#voteCounts" >voteCounts</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#adjustTextarea" >adjustTextarea</a>
+                            </li>
+                            <li>
+                                <a href="#areFormValuesEqual" >areFormValuesEqual</a>
+                            </li>
+                            <li>
+                                <a href="#customRunValidator" >customRunValidator</a>
+                            </li>
+                            <li>
+                                <a href="#getTeamName" >getTeamName</a>
+                            </li>
+                            <li>
+                                <a href="#hasError" >hasError</a>
+                            </li>
+                            <li>
+                                <a href="#hasVoteCounts" >hasVoteCounts</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onCancel" >onCancel</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#onTeamChange" >onTeamChange</a>
+                            </li>
+                            <li>
+                                <a href="#storeInitialFormValues" >storeInitialFormValues</a>
+                            </li>
+                            <li>
+                                <a href="#updateGameTitle" >updateGameTitle</a>
+                            </li>
+                            <li>
+                                <a href="#updateTeamImages" >updateTeamImages</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#game" >game</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#game" >game</a>
+                                </li>
+                                <li>
+                                    <a href="#isFormDirty" >isFormDirty</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_modal: ModalController, formBuilder: FormBuilder, firebaseService: <a href="../injectables/FirebaseService.html" target="_self">FirebaseService</a>, voteService: <a href="../injectables/VoteService.html" target="_self">VoteService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:88</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor for GameDetailComponent.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_modal</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>ModalController for handling modals.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>FormBuilder for creating form groups and controls.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>firebaseService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FirebaseService.html" target="_self" >FirebaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>FirebaseService for managing team data.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>voteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/VoteService.html" target="_self" >VoteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>VoteService for managing votes.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="game"></a>
+                        <b>game</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Game.html" target="_self" >Game | null</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:72</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Input to set the game details</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adjustTextarea"></a>
+                    <span class="name">
+                        <span ><b>adjustTextarea</b></span>
+                        <a href="#adjustTextarea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>adjustTextarea(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="250"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:250</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Adjusts the height of the textarea based on its content.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The input event.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areFormValuesEqual"></a>
+                    <span class="name">
+                        <span ><b>areFormValuesEqual</b></span>
+                        <a href="#areFormValuesEqual"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>areFormValuesEqual(initialValues: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, currentValues: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="270"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:270</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Compares the initial form values with the current form values.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>initialValues</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The initial form values.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>currentValues</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The current form values.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>True if the form values are equal, false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customRunValidator"></a>
+                    <span class="name">
+                        <span ><b>customRunValidator</b></span>
+                        <a href="#customRunValidator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>customRunValidator(control: AbstractControl)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="219"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:219</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Custom validator for the runs input field.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>control</td>
+                                            <td>
+                                                        <code>AbstractControl</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The form control to validate.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>ValidationErrors | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Validation errors or null if the control is valid.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTeamName"></a>
+                    <span class="name">
+                        <span ><b>getTeamName</b></span>
+                        <a href="#getTeamName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTeamName(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="231"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:231</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Gets the name of a team based on its ID.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The ID of the team.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The name of the team or the team ID if the team is not found.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasError"></a>
+                    <span class="name">
+                        <span ><b>hasError</b></span>
+                        <a href="#hasError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasError(control: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, error: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="166"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:166</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if a form control has a specific error.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>control</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The name of the form control.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>error</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The error to check for.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>True if the control has the specified error, false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasVoteCounts"></a>
+                    <span class="name">
+                        <span ><b>hasVoteCounts</b></span>
+                        <a href="#hasVoteCounts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasVoteCounts()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="209"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:209</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if there are vote counts available.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>True if there are vote counts, false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular lifecycle hook that is called after data-bound properties are initialized.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancel"></a>
+                    <span class="name">
+                        <span ><b>onCancel</b></span>
+                        <a href="#onCancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:137</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the cancel action.
+Dismisses the modal without saving changes.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the submit action.
+Dismisses the modal and saves the form data.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onTeamChange"></a>
+                    <span class="name">
+                        <span ><b>onTeamChange</b></span>
+                        <a href="#onTeamChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onTeamChange()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="240"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:240</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the change event for the team selection.
+Updates the team images and game title.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="storeInitialFormValues"></a>
+                    <span class="name">
+                        <span ><b>storeInitialFormValues</b></span>
+                        <a href="#storeInitialFormValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>storeInitialFormValues()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="259"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:259</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Stores the initial form values to check for changes later.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateGameTitle"></a>
+                    <span class="name">
+                        <span ><b>updateGameTitle</b></span>
+                        <a href="#updateGameTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateGameTitle()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="196"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:196</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the game title based on the selected local and visitor teams.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTeamImages"></a>
+                    <span class="name">
+                        <span ><b>updateTeamImages</b></span>
+                        <a href="#updateTeamImages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateTeamImages()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="183"
+                                    class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:183</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the team images and names based on the selected local and visitor teams.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allTeams"></a>
+                    <span class="name">
+                        <span ><b>allTeams</b></span>
+                        <a href="#allTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>List of all teams</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Form group for the game detail form</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gameTitle"></a>
+                    <span class="name">
+                        <span ><b>gameTitle</b></span>
+                        <a href="#gameTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Title of the game</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialFormValues"></a>
+                    <span class="name">
+                        <span ><b>initialFormValues</b></span>
+                        <a href="#initialFormValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initial form values to check for changes</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="localTeamImageUrl"></a>
+                    <span class="name">
+                        <span ><b>localTeamImageUrl</b></span>
+                        <a href="#localTeamImageUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Image URL of the local team</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="localTeamName"></a>
+                    <span class="name">
+                        <span ><b>localTeamName</b></span>
+                        <a href="#localTeamName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Name of the local team</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mode"></a>
+                    <span class="name">
+                        <span ><b>mode</b></span>
+                        <a href="#mode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;New&quot; | &quot;Edit&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;New&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mode to determine if the form is for creating a new game or editing an existing one</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uuid"></a>
+                    <span class="name">
+                        <span ><b>uuid</b></span>
+                        <a href="#uuid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>UUID of the game</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="visitorTeamImageUrl"></a>
+                    <span class="name">
+                        <span ><b>visitorTeamImageUrl</b></span>
+                        <a href="#visitorTeamImageUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Image URL of the visitor team</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="visitorTeamName"></a>
+                    <span class="name">
+                        <span ><b>visitorTeamName</b></span>
+                        <a href="#visitorTeamName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Name of the visitor team</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="voteCounts"></a>
+                    <span class="name">
+                        <span ><b>voteCounts</b></span>
+                        <a href="#voteCounts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Object to store vote counts for teams</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="game"></a>
+                        <span class="name"><b>game</b><a href="#game"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>game(_game: <a href="../interfaces/Game.html" target="_self">Game | null</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:72</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Input to set the game details</p>
+</div>
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_game</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../interfaces/Game.html" target="_self" >Game | null</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isFormDirty"></a>
+                        <span class="name"><b>isFormDirty</b><a href="#isFormDirty"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isFormDirty()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="176" class="link-to-prism">src/app/shared/components/game-detail/game-detail.component.ts:176</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Checks if the form is dirty (modified).</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from &#x27;@angular/forms&#x27;;
+import { ModalController } from &#x27;@ionic/angular&#x27;;
+import { Game } from &#x27;src/app/core/interfaces/game&#x27;;
+import { VoteService } from &#x27;src/app/core/services/api/vote.service&#x27;;
+import { FirebaseService } from &#x27;src/app/core/services/firebase/firebase.service&#x27;;
+
+@Component({
+  selector: &#x27;app-game-detail&#x27;,
+  templateUrl: &#x27;./game-detail.component.html&#x27;,
+  styleUrls: [&#x27;./game-detail.component.scss&#x27;],
+})
+export class GameDetailComponent implements OnInit {
+  /**
+   * Form group for the game detail form
+   */
+  form: FormGroup;
+
+  /**
+   * Mode to determine if the form is for creating a new game or editing an existing one
+   */
+  mode: &#x27;New&#x27; | &#x27;Edit&#x27; &#x3D; &#x27;New&#x27;;
+
+  /**
+   * UUID of the game
+   */
+  uuid: string &#x3D; &quot;&quot;;
+
+  /**
+   * List of all teams
+   */
+  allTeams: any[] &#x3D; [];
+
+  /**
+   * Image URL of the local team
+   */
+  localTeamImageUrl: string | null &#x3D; null;
+
+  /**
+   * Image URL of the visitor team
+   */
+  visitorTeamImageUrl: string | null &#x3D; null;
+
+  /**
+   * Name of the local team
+   */
+  localTeamName: string | null &#x3D; null;
+
+  /**
+   * Name of the visitor team
+   */
+  visitorTeamName: string | null &#x3D; null;
+
+  /**
+   * Object to store vote counts for teams
+   */
+  voteCounts: { [teamId: string]: number } &#x3D; {};
+
+  /**
+   * Title of the game
+   */
+  gameTitle: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Initial form values to check for changes
+   */
+  initialFormValues: any;
+
+  /**
+   * Input to set the game details
+   */
+  @Input() set game(_game: Game | null) {
+    if (_game) {
+      this.mode &#x3D; &#x27;Edit&#x27;;
+      this.form.controls[&#x27;gameDate&#x27;].setValue(_game.gameDate);
+      this.form.controls[&#x27;local&#x27;].setValue(_game.local?.uuid || &#x27;&#x27;);
+      this.form.controls[&#x27;localRuns&#x27;].setValue(_game.localRuns);
+      this.form.controls[&#x27;visitor&#x27;].setValue(_game.visitor?.uuid || &#x27;&#x27;);
+      this.form.controls[&#x27;visitorRuns&#x27;].setValue(_game.visitorRuns);
+      this.form.controls[&#x27;story&#x27;].setValue(_game.story);
+      if (_game.uuid) {
+        this.uuid &#x3D; _game.uuid;
+      }
+      this.updateTeamImages();
+      this.updateGameTitle();
+      this.storeInitialFormValues();
+    }
+  }
+
+  /**
+   * Constructor for GameDetailComponent.
+   * 
+   * @param _modal ModalController for handling modals.
+   * @param formBuilder FormBuilder for creating form groups and controls.
+   * @param firebaseService FirebaseService for managing team data.
+   * @param voteService VoteService for managing votes.
+   */
+  constructor(
+    private _modal: ModalController,
+    private formBuilder: FormBuilder,
+    private firebaseService: FirebaseService,
+    private voteService: VoteService,
+  ) {
+    this.form &#x3D; this.formBuilder.group({
+      gameDate: [&#x27;&#x27;, [Validators.required]],
+      local: [&#x27;&#x27;, [Validators.required]],
+      localRuns: [&#x27;&#x27;, [Validators.required, this.customRunValidator]],
+      visitor: [&#x27;&#x27;, [Validators.required]],
+      visitorRuns: [&#x27;&#x27;, [Validators.required, this.customRunValidator]],
+      story: [&#x27;&#x27;, [Validators.required]],
+    });
+  }
+
+  /**
+   * Angular lifecycle hook that is called after data-bound properties are initialized.
+   */
+  
+  ngOnInit() {
+    // Subscribe to the teams observable to get all teams
+    this.firebaseService.teams$.subscribe(teams &#x3D;&gt; {
+      this.allTeams &#x3D; teams;
+      this.updateTeamImages();
+      this.updateGameTitle();
+    });
+
+    // Subscribe to the vote counts for teams
+    this.voteService.countVotesForTeams(this.uuid).subscribe(counts &#x3D;&gt; {
+      this.voteCounts &#x3D; counts;
+      console.log(this.voteCounts);
+    });
+  }
+
+  /**
+   * Handles the cancel action.
+   * Dismisses the modal without saving changes.
+   */
+  onCancel() {
+    this._modal.dismiss(null, &#x27;cancel&#x27;);
+  }
+
+  /**
+   * Handles the submit action.
+   * Dismisses the modal and saves the form data.
+   */
+  onSubmit() {
+    const date &#x3D; new Date(this.form.value.gameDate);
+    const formattedDate &#x3D; date.toISOString().split(&#x27;T&#x27;)[0];
+    const formWithUUID &#x3D; {
+      ...this.form.value,
+      gameDate: formattedDate,
+      uuid: this.uuid,
+      localRuns: this.form.value.localRuns.toString(),
+      visitorRuns: this.form.value.visitorRuns.toString()
+    };
+    console.log(formWithUUID);
+    this._modal.dismiss(formWithUUID, &#x27;ok&#x27;);
+  }
+
+  /**
+   * Checks if a form control has a specific error.
+   * 
+   * @param control The name of the form control.
+   * @param error The error to check for.
+   * @returns True if the control has the specified error, false otherwise.
+   */
+  hasError(control: string, error: string): boolean {
+    let errors &#x3D; this.form.controls[control].errors;
+    return errors !&#x3D; null &amp;&amp; error in errors;
+  }
+
+  /**
+   * Checks if the form is dirty (modified).
+   * 
+   * @returns True if the form is dirty, false otherwise.
+   */
+  get isFormDirty(): boolean {
+    return !this.areFormValuesEqual(this.initialFormValues, this.form.value);
+  }
+
+  /**
+   * Updates the team images and names based on the selected local and visitor teams.
+   */
+  updateTeamImages() {
+    const localTeam &#x3D; this.allTeams.find(team &#x3D;&gt; team.uuid &#x3D;&#x3D;&#x3D; this.form.value.local);
+    const visitorTeam &#x3D; this.allTeams.find(team &#x3D;&gt; team.uuid &#x3D;&#x3D;&#x3D; this.form.value.visitor);
+    this.localTeamImageUrl &#x3D; localTeam ? localTeam.imageUrl : null;
+    this.visitorTeamImageUrl &#x3D; visitorTeam ? visitorTeam.imageUrl : null;
+    this.localTeamName &#x3D; localTeam ? localTeam.name : null;
+    this.visitorTeamName &#x3D; visitorTeam ? visitorTeam.name : null;
+    this.updateGameTitle();
+  }
+
+  /**
+   * Updates the game title based on the selected local and visitor teams.
+   */
+  updateGameTitle() {
+    const localTeam &#x3D; this.allTeams.find(team &#x3D;&gt; team.uuid &#x3D;&#x3D;&#x3D; this.form.value.local);
+    const visitorTeam &#x3D; this.allTeams.find(team &#x3D;&gt; team.uuid &#x3D;&#x3D;&#x3D; this.form.value.visitor);
+    const localTeamName &#x3D; localTeam ? localTeam.name : &#x27;Local&#x27;;
+    const visitorTeamName &#x3D; visitorTeam ? visitorTeam.name : &#x27;Visitor&#x27;;
+    this.gameTitle &#x3D; &#x60;${localTeamName} vs ${visitorTeamName}&#x60;;
+  }
+
+  /**
+   * Checks if there are vote counts available.
+   * 
+   * @returns True if there are vote counts, false otherwise.
+   */
+  hasVoteCounts(): boolean {
+    return Object.keys(this.voteCounts).length &gt; 0;
+  }
+
+  /**
+   * Custom validator for the runs input field.
+   * 
+   * @param control The form control to validate.
+   * @returns Validation errors or null if the control is valid.
+   */
+  customRunValidator(control: AbstractControl): ValidationErrors | null {
+    const value &#x3D; control.value;
+    const valid &#x3D; /^\d+$/.test(value) || value &#x3D;&#x3D;&#x3D; &#x27;?&#x27;;
+    return valid ? null : { invalidRun: true };
+  }
+
+  /**
+   * Gets the name of a team based on its ID.
+   * 
+   * @param teamId The ID of the team.
+   * @returns The name of the team or the team ID if the team is not found.
+   */
+  getTeamName(teamId: string): string {
+    const team &#x3D; this.allTeams.find(t &#x3D;&gt; t.uuid &#x3D;&#x3D;&#x3D; teamId);
+    return team ? team.name : teamId;
+  }
+
+  /**
+   * Handles the change event for the team selection.
+   * Updates the team images and game title.
+   */
+  onTeamChange() {
+    this.updateTeamImages();
+    this.updateGameTitle();
+  }
+
+  /**
+   * Adjusts the height of the textarea based on its content.
+   * 
+   * @param event The input event.
+   */
+  adjustTextarea(event: any) {
+    const textarea &#x3D; event.target as HTMLTextAreaElement;
+    textarea.style.height &#x3D; &#x27;auto&#x27;;
+    textarea.style.height &#x3D; textarea.scrollHeight + &#x27;px&#x27;;
+  }
+
+  /**
+   * Stores the initial form values to check for changes later.
+   */
+  storeInitialFormValues() {
+    this.initialFormValues &#x3D; this.form.getRawValue();
+  }
+
+  /**
+   * Compares the initial form values with the current form values.
+   * 
+   * @param initialValues The initial form values.
+   * @param currentValues The current form values.
+   * @returns True if the form values are equal, false otherwise.
+   */
+  areFormValuesEqual(initialValues: any, currentValues: any): boolean {
+    return JSON.stringify(initialValues) &#x3D;&#x3D;&#x3D; JSON.stringify(currentValues);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-toolbar class&#x3D;&quot;toolbar&quot;&gt;
+    &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+      &lt;ion-button class&#x3D;&quot;button&quot; fill&#x3D;&quot;clear&quot; (click)&#x3D;&quot;onCancel()&quot;&gt;
+        &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;arrow-back-outline&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-button&gt;
+    &lt;/ion-buttons&gt;
+    &lt;ion-title&gt;
+      {{ gameTitle }}
+    &lt;/ion-title&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content class&#x3D;&quot;ion-padding&quot;&gt;
+  &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; (keyup.enter)&#x3D;&quot;onSubmit()&quot; class&#x3D;&quot;form-container&quot;&gt;
+    &lt;div class&#x3D;&quot;team-images-container&quot;&gt;
+      &lt;div class&#x3D;&quot;team-info&quot;&gt;
+        &lt;div class&#x3D;&quot;team-name&quot; *ngIf&#x3D;&quot;localTeamName&quot;&gt;{{ localTeamName }}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;team-image&quot;&gt;
+          &lt;img *ngIf&#x3D;&quot;localTeamImageUrl&quot; [src]&#x3D;&quot;localTeamImageUrl&quot; alt&#x3D;&quot;Local Team&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;team-runs&quot;&gt;{{ form.controls[&#x27;localRuns&#x27;].value || 0 }}&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;vs-text&quot;&gt;VS&lt;/div&gt;
+      &lt;div class&#x3D;&quot;team-info&quot;&gt;
+        &lt;div class&#x3D;&quot;team-name&quot; *ngIf&#x3D;&quot;visitorTeamName&quot;&gt;{{ visitorTeamName }}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;team-image&quot;&gt;
+          &lt;img *ngIf&#x3D;&quot;visitorTeamImageUrl&quot; [src]&#x3D;&quot;visitorTeamImageUrl&quot; alt&#x3D;&quot;Visitor Team&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;team-runs&quot;&gt;{{ form.controls[&#x27;visitorRuns&#x27;].value || 0 }}&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;input-wrapper&quot;&gt;
+      &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;games.date&#x27; | translate }}&lt;/ion-title&gt;
+      &lt;ion-item class&#x3D;&quot;dynamic-item&quot;&gt;
+        &lt;ion-datetime
+          formControlName&#x3D;&quot;gameDate&quot;
+          display-format&#x3D;&quot;DD/MM/YYYY&quot;
+          picker-format&#x3D;&quot;DD MMMM YYYY&quot;
+          presentation&#x3D;&quot;date&quot;&gt;
+        &lt;/ion-datetime&gt;
+      &lt;/ion-item&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;input-wrapper&quot;&gt;
+      &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;games.localTeam&#x27; | translate }}&lt;/ion-title&gt;
+      &lt;ion-item class&#x3D;&quot;dynamic-item&quot;&gt;
+        &lt;ion-select formControlName&#x3D;&quot;local&quot; (ionChange)&#x3D;&quot;onTeamChange()&quot;&gt;
+          &lt;ion-select-option *ngFor&#x3D;&quot;let team of allTeams&quot; [value]&#x3D;&quot;team.uuid&quot;&gt;{{ team.name }}&lt;/ion-select-option&gt;
+        &lt;/ion-select&gt;
+      &lt;/ion-item&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;input-wrapper&quot;&gt;
+      &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;games.localRuns&#x27; | translate }}&lt;/ion-title&gt;
+      &lt;ion-item class&#x3D;&quot;dynamic-item&quot;&gt;
+        &lt;ion-input formControlName&#x3D;&quot;localRuns&quot; type&#x3D;&quot;text&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;input-wrapper&quot;&gt;
+      &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;games.visitorTeam&#x27; | translate }}&lt;/ion-title&gt;
+      &lt;ion-item class&#x3D;&quot;dynamic-item&quot;&gt;
+        &lt;ion-select formControlName&#x3D;&quot;visitor&quot; (ionChange)&#x3D;&quot;onTeamChange()&quot;&gt;
+          &lt;ion-select-option *ngFor&#x3D;&quot;let team of allTeams&quot; [value]&#x3D;&quot;team.uuid&quot;&gt;{{ team.name }}&lt;/ion-select-option&gt;
+        &lt;/ion-select&gt;
+      &lt;/ion-item&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;input-wrapper&quot;&gt;
+      &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;games.visitorRuns&#x27; | translate }}&lt;/ion-title&gt;
+      &lt;ion-item class&#x3D;&quot;dynamic-item&quot;&gt;
+        &lt;ion-input formControlName&#x3D;&quot;visitorRuns&quot; type&#x3D;&quot;text&quot;&gt;&lt;/ion-input&gt;
+      &lt;/ion-item&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;input-wrapper&quot;&gt;
+      &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;games.story&#x27; | translate }}&lt;/ion-title&gt;
+      &lt;ion-item class&#x3D;&quot;dynamic-item story-item&quot;&gt;
+        &lt;ion-textarea class&#x3D;&quot;story-textarea&quot; formControlName&#x3D;&quot;story&quot; (input)&#x3D;&quot;adjustTextarea($event)&quot;&gt;&lt;/ion-textarea&gt;
+      &lt;/ion-item&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+
+  &lt;div *ngIf&#x3D;&quot;hasVoteCounts()&quot; class&#x3D;&quot;winner-votes-section&quot;&gt;
+    &lt;h2&gt;{{ &#x27;games.votesTitle&#x27; | translate }}&lt;/h2&gt;
+    &lt;div *ngFor&#x3D;&quot;let vote of voteCounts | keyvalue&quot; class&#x3D;&quot;team-vote&quot;&gt;
+      &lt;div class&#x3D;&quot;team-name&quot;&gt;{{ getTeamName(vote.key) }}&lt;/div&gt;
+      &lt;div class&#x3D;&quot;team-votes&quot;&gt;{{ vote.value }} {{ &#x27;games.votes&#x27; | translate }}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ion-content&gt;
+
+&lt;ion-footer&gt;
+  &lt;ion-button type&#x3D;&quot;submit&quot; class&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;!form.valid || !isFormDirty&quot; (click)&#x3D;&quot;onSubmit()&quot;&gt;{{ &#x27;games.submit&#x27; | translate }}&lt;/ion-button&gt;
+&lt;/ion-footer&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./game-detail.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">ion-header, ion-content, ion-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toolbar{
+  text-align: center;
+}
+.toolbar{
+  ion-title{
+    font-size: 2.5rem;
+    margin: 1%;
+    font-family: &#x27;titlesFont&#x27;; 
+  }
+} 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5%;
+}
+
+  
+.input-title {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  color:var(--ion-color-textColor);
+
+}
+
+.team-images-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.team-info {
+  text-align: center;
+  flex: 1;
+}
+
+.team-name {
+  font-size: 2rem;
+  margin-bottom: 1%;
+  font-family: &#x27;titlesFont&#x27;; 
+
+}
+
+.team-image img {
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team-runs {
+  margin-top: 1%;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.vs-text {
+  font-size: 2.5rem;
+  font-family: &#x27;titlesFont&#x27;; 
+}
+
+.winner-votes-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.winner-votes-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.team-vote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.team-votes {
+  font-size: 1.2rem;
+}
+
+ion-button.submitButton {
+  font-size: 2rem;
+  --background: #009a44;
+  --background-hover: #009a44;
+  --background-activated: #03ca5a;
+  --background-focused: #03ca5a;
+  transition: box-shadow 0.3s ease;
+}
+
+ion-button.submitButton:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+}
+
+ion-input {
+  text-align: center;
+}
+
+.story-textarea {
+  height: auto;
+  width: 100%;
+  min-height: 150px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  font-size: 1.2rem;
+  text-align: justify;
+  overflow: hidden;
+  resize: none;
+  padding: 1%;
+}
+
+.story-item {
+  width: 100%;
+  max-width: 80%;
+}
+
+h2{
+  color:var(--ion-color-textColor)
+}
+.team-votes{
+  color: var(--ion-color-textColor);
+}
+.team-name{
+  color: var(--ion-color-textColor);
+}
+ion-toolbar{
+  --background: var(--ion-color-secondaryGreen);
+}
+ion-footer{
+  background-color: var(--ion-color-primaryGreen);
+  box-shadow: none;
+}
+
+ion-content {
+  --background: var(--ion-color-primaryGreen);
+}
+
+.input{
+  color:var(--ion-color-textColor); 
+}
+ion-item{
+  --background: var(--ion-color-secondaryGreen);
+  color: var(--ion-color-textColor);
+}
+ion-button.button {
+  color:var(--ion-color-textColorDark);
+  --background: var(--ion-color-mediumEndCallToAction);
+  --background-hover: var(--ion-color-callToActionGreen);
+  --background-activated: var(--ion-color-callToActionGreen);
+  --background-focused: var(--ion-color-callToActionGreen);
+  transition: box-shadow 0.3s ease;
+  font-weight: bold;
+  }
+  ion-button.button:hover {
+  --background: var(--ion-color-callToActionGreen);
+  color:var(--ion-color-textColorDark);
+  }
+
+  ion-button.submit {
+    font-size: 2rem;
+    transition: box-shadow 0.3s ease;
+    --background: var(--ion-color-callToActionGreen);
+    color: var(--ion-color-textColorDark);
+    margin-bottom: 1%;
+    margin-top: 1%;
+    font-weight: bold;
+  }
+  
+  ion-button.submit:hover {
+    box-shadow: 0 0 20px var(--ion-color-callToActionGreen);
+  }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar class="toolbar">    <ion-buttons slot="start">      <ion-button class="button" fill="clear" (click)="onCancel()">        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>      </ion-button>    </ion-buttons>    <ion-title>      {{ gameTitle }}    </ion-title>  </ion-toolbar></ion-header><ion-content class="ion-padding">  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()" class="form-container">    <div class="team-images-container">      <div class="team-info">        <div class="team-name" *ngIf="localTeamName">{{ localTeamName }}</div>        <div class="team-image">          <img *ngIf="localTeamImageUrl" [src]="localTeamImageUrl" alt="Local Team">        </div>        <div class="team-runs">{{ form.controls[\'localRuns\'].value || 0 }}</div>      </div>      <div class="vs-text">VS</div>      <div class="team-info">        <div class="team-name" *ngIf="visitorTeamName">{{ visitorTeamName }}</div>        <div class="team-image">          <img *ngIf="visitorTeamImageUrl" [src]="visitorTeamImageUrl" alt="Visitor Team">        </div>        <div class="team-runs">{{ form.controls[\'visitorRuns\'].value || 0 }}</div>      </div>    </div>    <div class="input-wrapper">      <ion-title class="input-title">{{ \'games.date\' | translate }}</ion-title>      <ion-item class="dynamic-item">        <ion-datetime          formControlName="gameDate"          display-format="DD/MM/YYYY"          picker-format="DD MMMM YYYY"          presentation="date">        </ion-datetime>      </ion-item>    </div>    <div class="input-wrapper">      <ion-title class="input-title">{{ \'games.localTeam\' | translate }}</ion-title>      <ion-item class="dynamic-item">        <ion-select formControlName="local" (ionChange)="onTeamChange()">          <ion-select-option *ngFor="let team of allTeams" [value]="team.uuid">{{ team.name }}</ion-select-option>        </ion-select>      </ion-item>    </div>    <div class="input-wrapper">      <ion-title class="input-title">{{ \'games.localRuns\' | translate }}</ion-title>      <ion-item class="dynamic-item">        <ion-input formControlName="localRuns" type="text"></ion-input>      </ion-item>    </div>    <div class="input-wrapper">      <ion-title class="input-title">{{ \'games.visitorTeam\' | translate }}</ion-title>      <ion-item class="dynamic-item">        <ion-select formControlName="visitor" (ionChange)="onTeamChange()">          <ion-select-option *ngFor="let team of allTeams" [value]="team.uuid">{{ team.name }}</ion-select-option>        </ion-select>      </ion-item>    </div>    <div class="input-wrapper">      <ion-title class="input-title">{{ \'games.visitorRuns\' | translate }}</ion-title>      <ion-item class="dynamic-item">        <ion-input formControlName="visitorRuns" type="text"></ion-input>      </ion-item>    </div>    <div class="input-wrapper">      <ion-title class="input-title">{{ \'games.story\' | translate }}</ion-title>      <ion-item class="dynamic-item story-item">        <ion-textarea class="story-textarea" formControlName="story" (input)="adjustTextarea($event)"></ion-textarea>      </ion-item>    </div>  </form>  <div *ngIf="hasVoteCounts()" class="winner-votes-section">    <h2>{{ \'games.votesTitle\' | translate }}</h2>    <div *ngFor="let vote of voteCounts | keyvalue" class="team-vote">      <div class="team-name">{{ getTeamName(vote.key) }}</div>      <div class="team-votes">{{ vote.value }} {{ \'games.votes\' | translate }}</div>    </div>  </div></ion-content><ion-footer>  <ion-button type="submit" class="submit" [disabled]="!form.valid || !isFormDirty" (click)="onSubmit()">{{ \'games.submit\' | translate }}</ion-button></ion-footer></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToolbarComponent', 'selector': 'app-toolbar'},{'name': 'ErrorModalComponent', 'selector': 'app-error-modal'},{'name': 'GameDetailComponent', 'selector': 'app-game-detail'},{'name': 'GameInfoComponent', 'selector': 'app-game-info'},{'name': 'GamesPage', 'selector': 'app-games'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayerDetailComponent', 'selector': 'app-player-detail'},{'name': 'PlayerInfoComponent', 'selector': 'app-player-info'},{'name': 'PlayersPage', 'selector': 'app-players'},{'name': 'PositionSelectorComponent', 'selector': 'app-position-selector'},{'name': 'RegisterFormComponent', 'selector': 'app-register-form'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SettingsPage', 'selector': 'app-settings'},{'name': 'SplashPage', 'selector': 'app-splash'},{'name': 'TeamDetailComponent', 'selector': 'app-team-detail'},{'name': 'TeamInfoComponent', 'selector': 'app-team-info'},{'name': 'TeamsPage', 'selector': 'app-teams'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UsersAdminPage', 'selector': 'app-users-admin'}];
+    var DIRECTIVES = [{'name': 'PositionImageDirective', 'selector': '[positionImage]'}];
+    var ACTUAL_COMPONENT = {'name': 'GameDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GameDetailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

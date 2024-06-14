@@ -1,0 +1,2432 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>home-slam documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">home-slam documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TeamDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/team-detail/team-detail.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for managing team details, including player assignments and team information.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-team-detail</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./team-detail.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./team-detail.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#availablePlayers" >availablePlayers</a>
+                            </li>
+                            <li>
+                                <a href="#currentTeamPlayers" >currentTeamPlayers</a>
+                            </li>
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                            <li>
+                                <a href="#imageURl" >imageURl</a>
+                            </li>
+                            <li>
+                                <a href="#initialPlayers" >initialPlayers</a>
+                            </li>
+                            <li>
+                                <a href="#mode" >mode</a>
+                            </li>
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                            <li>
+                                <a href="#story" >story</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addToFormArray" >addToFormArray</a>
+                            </li>
+                            <li>
+                                <a href="#adjustTextarea" >adjustTextarea</a>
+                            </li>
+                            <li>
+                                <a href="#areSetsEqual" >areSetsEqual</a>
+                            </li>
+                            <li>
+                                <a href="#drop" >drop</a>
+                            </li>
+                            <li>
+                                <a href="#hasError" >hasError</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onCancel" >onCancel</a>
+                            </li>
+                            <li>
+                                <a href="#onDelete" >onDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onImageChange" >onImageChange</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#removeFromFormArray" >removeFromFormArray</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#removePlayer" >removePlayer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#team" >team</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#team" >team</a>
+                                </li>
+                                <li>
+                                    <a href="#availablePlayersArray" >availablePlayersArray</a>
+                                </li>
+                                <li>
+                                    <a href="#currentTeamPlayersArray" >currentTeamPlayersArray</a>
+                                </li>
+                                <li>
+                                    <a href="#isFormDirty" >isFormDirty</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_modal: ModalController, formBuilder: FormBuilder, playerSvc: <a href="../injectables/PlayersService.html" target="_self">PlayersService</a>, firebaseService: <a href="../injectables/FirebaseService.html" target="_self">FirebaseService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:71</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor for TeamDetailComponent.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_modal</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>ModalController for handling modals.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>FormBuilder for creating form groups and controls.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>playerSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PlayersService.html" target="_self" >PlayersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>PlayersService for managing player data.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>firebaseService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FirebaseService.html" target="_self" >FirebaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>FirebaseService for handling image uploads.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="team"></a>
+                        <b>team</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Team.html" target="_self" >Team | null</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:54</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Input setter for the team. Initializes the form with the team data if provided.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addToFormArray"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addToFormArray</b></span>
+                        <a href="#addToFormArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addToFormArray(playerId: <a href="../interfaces/Player.html" target="_self">Player</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="179"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:179</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Adds a player to the form array.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>playerId</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Player.html" target="_self" >Player</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The player to add.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adjustTextarea"></a>
+                    <span class="name">
+                        <span ><b>adjustTextarea</b></span>
+                        <a href="#adjustTextarea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>adjustTextarea(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="287"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:287</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areSetsEqual"></a>
+                    <span class="name">
+                        <span ><b>areSetsEqual</b></span>
+                        <a href="#areSetsEqual"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>areSetsEqual(setA: <a href="../interfaces/Player.html" target="_self">Set&lt;Player&gt;</a>, setB: <a href="../interfaces/Player.html" target="_self">Set&lt;Player&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="264"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:264</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if two sets of players are equal.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>setA</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Player.html" target="_self" >Set&lt;Player&gt;</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The first set of players.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>setB</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Player.html" target="_self" >Set&lt;Player&gt;</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The second set of players.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>True if the sets are equal, false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drop"></a>
+                    <span class="name">
+                        <span ><b>drop</b></span>
+                        <a href="#drop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>drop(event: CdkDragDrop<string[]>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the drop event for dragging and dropping players.
+Updates the sets and form array accordingly.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>CdkDragDrop&lt;string[]&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The drag and drop event.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasError"></a>
+                    <span class="name">
+                        <span ><b>hasError</b></span>
+                        <a href="#hasError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasError(control: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, error: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="245"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:245</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if a form control has a specific error.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>control</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The form control name.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>error</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The error to check for.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>True if the control has the specified error, false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular lifecycle hook that is called after data-bound properties are initialized.
+Loads all players and initializes the form data.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancel"></a>
+                    <span class="name">
+                        <span ><b>onCancel</b></span>
+                        <a href="#onCancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="216"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:216</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the cancel action.
+Dismisses the modal without saving changes.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDelete"></a>
+                    <span class="name">
+                        <span ><b>onDelete</b></span>
+                        <a href="#onDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDelete()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="235"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:235</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the delete action.
+Dismisses the modal and deletes the team.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onImageChange"></a>
+                    <span class="name">
+                        <span ><b>onImageChange</b></span>
+                        <a href="#onImageChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onImageChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="278"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:278</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles image change event and uploads the image to Firebase.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The image change event.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="224"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:224</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the submit action.
+Dismisses the modal and saves changes.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeFromFormArray"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>removeFromFormArray</b></span>
+                        <a href="#removeFromFormArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeFromFormArray(playerId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Removes a player from the form array.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>playerId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The ID of the player to remove.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removePlayer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>removePlayer</b></span>
+                        <a href="#removePlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removePlayer(player: <a href="../interfaces/Player.html" target="_self">Player</a>, set: <a href="../interfaces/Player.html" target="_self">Set&lt;Player&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="155"
+                                    class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:155</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Removes a player from a given set.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>player</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Player.html" target="_self" >Player</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The player to remove.</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>set</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Player.html" target="_self" >Set&lt;Player&gt;</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The set to remove the player from.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="availablePlayers"></a>
+                    <span class="name">
+                        <span ><b>availablePlayers</b></span>
+                        <a href="#availablePlayers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Set&lt;Player&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set to keep track of available players not in the team.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentTeamPlayers"></a>
+                    <span class="name">
+                        <span ><b>currentTeamPlayers</b></span>
+                        <a href="#currentTeamPlayers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Set&lt;Player&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set to keep track of current team players.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imageURl"></a>
+                    <span class="name">
+                        <span ><b>imageURl</b></span>
+                        <a href="#imageURl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialPlayers"></a>
+                    <span class="name">
+                        <span ><b>initialPlayers</b></span>
+                        <a href="#initialPlayers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Set&lt;Player&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set to keep track of initial team players.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mode"></a>
+                    <span class="name">
+                        <span ><b>mode</b></span>
+                        <a href="#mode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;New&quot; | &quot;Edit&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;New&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Name of the team.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="story"></a>
+                    <span class="name">
+                        <span ><b>story</b></span>
+                        <a href="#story"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Story or description of the team.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="team"></a>
+                        <span class="name"><b>team</b><a href="#team"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>team(_team: <a href="../interfaces/Team.html" target="_self">Team | null</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:54</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Input setter for the team. Initializes the form with the team data if provided.</p>
+</div>
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                        <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_team</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../interfaces/Team.html" target="_self" >Team | null</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                            <td>
+                                                                    <p>The team data to initialize the form with.</p>
+
+                                                            </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="availablePlayersArray"></a>
+                        <span class="name"><b>availablePlayersArray</b><a href="#availablePlayersArray"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>availablePlayersArray()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="188" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:188</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Gets the array of available player IDs.</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>string[]</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentTeamPlayersArray"></a>
+                        <span class="name"><b>currentTeamPlayersArray</b><a href="#currentTeamPlayersArray"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>currentTeamPlayersArray()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="202" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:202</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Gets the array of current team player IDs.</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>string[]</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isFormDirty"></a>
+                        <span class="name"><b>isFormDirty</b><a href="#isFormDirty"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isFormDirty()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="254" class="link-to-prism">src/app/shared/components/team-detail/team-detail.component.ts:254</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Checks if the form is dirty (modified).</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, Input, OnInit } from &#x27;@angular/core&#x27;;
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from &#x27;@angular/cdk/drag-drop&#x27;;
+import { ModalController } from &#x27;@ionic/angular&#x27;;
+import { Player } from &#x27;src/app/core/interfaces/player&#x27;;
+import { Team } from &#x27;src/app/core/interfaces/team&#x27;;
+import { PlayersService } from &#x27;src/app/core/services/api/player.service&#x27;;
+import { FirebaseService } from &#x27;src/app/core/services/firebase/firebase.service&#x27;; // Ensure to import your Firebase service
+
+/**
+ * Component for managing team details, including player assignments and team information.
+ */
+@Component({
+  selector: &#x27;app-team-detail&#x27;,
+  templateUrl: &#x27;./team-detail.component.html&#x27;,
+  styleUrls: [&#x27;./team-detail.component.scss&#x27;],
+})
+export class TeamDetailComponent implements OnInit {
+  form: FormGroup;
+  mode: &#x27;New&#x27; | &#x27;Edit&#x27; &#x3D; &#x27;New&#x27;;
+
+  /**
+   * Set to keep track of current team players.
+   */
+  currentTeamPlayers &#x3D; new Set&lt;Player&gt;();
+
+  /**
+   * Set to keep track of initial team players.
+   */
+  initialPlayers &#x3D; new Set&lt;Player&gt;();
+
+  /**
+   * Set to keep track of available players not in the team.
+   */
+  availablePlayers &#x3D; new Set&lt;Player&gt;();
+
+  /**
+   * Name of the team.
+   */
+  name: string &#x3D; &quot;&quot;;
+
+  /**
+   * Story or description of the team.
+   */
+  story: string &#x3D; &quot;&quot;;
+
+  imageURl: string &#x3D; &quot;&quot;
+
+
+  /**
+   * Input setter for the team. Initializes the form with the team data if provided.
+   * @param _team The team data to initialize the form with.
+   */
+  @Input() set team(_team: Team | null) {
+    if (_team) {
+      this.mode &#x3D; &#x27;Edit&#x27;;
+      this.form.controls[&#x27;name&#x27;].setValue(_team.name);
+      this.form.controls[&#x27;uuid&#x27;].setValue(_team.uuid); 
+      this.form.controls[&#x27;imageUrl&#x27;].setValue(_team.imageUrl || &#x27;&#x27;);
+      this.form.controls[&#x27;story&#x27;].setValue(_team.story || &#x27;&#x27;);
+      this.currentTeamPlayers.clear();
+
+      _team.players.forEach(player &#x3D;&gt; {
+        if (player.uuid) {
+          this.currentTeamPlayers.add(player);
+          this.initialPlayers.add(player);
+          (this.form.get(&#x27;players&#x27;) as FormArray).push(new FormControl(player));
+        }
+      });
+    }
+  }
+
+  /**
+   * Constructor for TeamDetailComponent.
+   * 
+   * @param _modal ModalController for handling modals.
+   * @param formBuilder FormBuilder for creating form groups and controls.
+   * @param playerSvc PlayersService for managing player data.
+   * @param firebaseService FirebaseService for handling image uploads.
+   */
+  constructor(
+    private _modal: ModalController,
+    private formBuilder: FormBuilder,
+    private playerSvc: PlayersService,
+    private firebaseService: FirebaseService // Ensure to inject your Firebase service
+  ) {
+    this.form &#x3D; this.formBuilder.group({
+      name: [&#x27;&#x27;, [Validators.required]],
+      players: this.formBuilder.array([]),
+      uuid: [&#x27;&#x27;],
+      imageUrl: [&#x27;&#x27;],
+      story: [&#x27;&#x27;]
+    });
+  }
+
+  /**
+   * Angular lifecycle hook that is called after data-bound properties are initialized.
+   * Loads all players and initializes the form data.
+   */
+  ngOnInit() {
+    this.playerSvc.getAll().subscribe((players: any[]) &#x3D;&gt; {
+      let initialPlayersArray &#x3D; Array.from(this.initialPlayers);
+      players.forEach(player &#x3D;&gt; {
+        if (initialPlayersArray.some((p: Player) &#x3D;&gt; p.uuid &#x3D;&#x3D;&#x3D; player.uuid)) {
+          this.removePlayer(player, this.availablePlayers);
+        } else {
+          this.availablePlayers.add(player);
+        }
+      });
+    });
+    this.name &#x3D; this.form.get(&#x27;name&#x27;)?.value;
+    this.story &#x3D; this.form.get(&#x27;story&#x27;)?.value;
+    this.imageURl &#x3D; this.form.get(&#x27;imageUrl&#x27;)?.value;
+
+  }
+
+  /**
+   * Handles the drop event for dragging and dropping players.
+   * Updates the sets and form array accordingly.
+   * @param event The drag and drop event.
+   */
+  drop(event: CdkDragDrop&lt;string[]&gt;) {
+    if (event.previousContainer &#x3D;&#x3D;&#x3D; event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      let playerId &#x3D; event.previousContainer.data[event.previousIndex];
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+
+      if (event.previousContainer.id &#x3D;&#x3D;&#x3D; &#x27;availablePlayersList&#x27;) {
+        this.playerSvc.getPlayer(playerId).subscribe((player: Player) &#x3D;&gt; {
+          this.currentTeamPlayers.add(player);
+          this.removePlayer(player, this.availablePlayers);
+          this.addToFormArray(player);
+        });
+      } else {
+        this.playerSvc.getPlayer(playerId).subscribe((player: Player) &#x3D;&gt; {
+          this.removePlayer(player, this.currentTeamPlayers);
+          this.availablePlayers.add(player);
+          this.removeFromFormArray(playerId);
+        });
+      }
+    }
+  }
+
+  /**
+   * Removes a player from a given set.
+   * @param player The player to remove.
+   * @param set The set to remove the player from.
+   */
+  private removePlayer(player: Player, set: Set&lt;Player&gt;) {
+    const playerIdToRemove &#x3D; player.uuid;
+    const playerToRemove &#x3D; Array.from(set).find(player &#x3D;&gt; player.uuid &#x3D;&#x3D;&#x3D; playerIdToRemove);
+    if (playerToRemove) {
+      set.delete(playerToRemove);
+    }
+  }
+
+  /**
+   * Removes a player from the form array.
+   * @param playerId The ID of the player to remove.
+   */
+  private removeFromFormArray(playerId: string) {
+    const playersArray &#x3D; this.form.get(&#x27;players&#x27;) as FormArray;
+    const index &#x3D; playersArray.controls.findIndex((player: any) &#x3D;&gt; player.value.uuid &#x3D;&#x3D;&#x3D; playerId);
+    if (index !&#x3D;&#x3D; -1) {
+      playersArray.removeAt(index);
+    }
+  }
+
+  /**
+   * Adds a player to the form array.
+   * @param playerId The player to add.
+   */
+  private addToFormArray(playerId: Player) {
+    const playersArray &#x3D; this.form.get(&#x27;players&#x27;) as FormArray;
+    playersArray.push(new FormControl(playerId));
+  }
+
+  /**
+   * Gets the array of available player IDs.
+   * @returns An array of available player IDs.
+   */
+  get availablePlayersArray(): string[] {
+    let availableAsArray &#x3D; Array.from(this.availablePlayers);
+    let availablePlayersId: string[] &#x3D; [];
+    availableAsArray.forEach(player &#x3D;&gt; {
+      if (player.uuid)
+        availablePlayersId.push(player.uuid);
+    });
+    return availablePlayersId;
+  }
+
+  /**
+   * Gets the array of current team player IDs.
+   * @returns An array of current team player IDs.
+   */
+  get currentTeamPlayersArray(): string[] {
+    let currentTeamAsArray &#x3D; Array.from(this.currentTeamPlayers);
+    let currentTeamId: string[] &#x3D; [];
+    currentTeamAsArray.forEach(player &#x3D;&gt; {
+      if (player.uuid)
+        currentTeamId.push(player.uuid);
+    });
+    return currentTeamId;
+  }
+
+  /**
+   * Handles the cancel action.
+   * Dismisses the modal without saving changes.
+   */
+  onCancel() {
+    this._modal.dismiss(null, &#x27;cancel&#x27;);
+  }
+
+  /**
+   * Handles the submit action.
+   * Dismisses the modal and saves changes.
+   */
+  onSubmit() {
+    if ((this.form.get(&#x27;players&#x27;) as FormArray).length &#x3D;&#x3D;&#x3D; 0) {
+      this.form.removeControl(&#x27;players&#x27;);
+    }
+    this._modal.dismiss(this.form.value, &#x27;ok&#x27;);
+  }
+
+  /**
+   * Handles the delete action.
+   * Dismisses the modal and deletes the team.
+   */
+  onDelete() {
+    this._modal.dismiss(this.form.value, &#x27;delete&#x27;);
+  }
+
+  /**
+   * Checks if a form control has a specific error.
+   * @param control The form control name.
+   * @param error The error to check for.
+   * @returns True if the control has the specified error, false otherwise.
+   */
+  hasError(control: string, error: string): boolean {
+    let errors &#x3D; this.form.controls[control].errors;
+    return errors !&#x3D; null &amp;&amp; error in errors;
+  }
+
+  /**
+   * Checks if the form is dirty (modified).
+   * @returns True if the form is dirty, false otherwise.
+   */
+  get isFormDirty(): boolean {
+    return this.form.get(&#x27;name&#x27;)?.value !&#x3D;&#x3D; this.name || !this.areSetsEqual(this.currentTeamPlayers, this.initialPlayers) || this.form.get(&#x27;story&#x27;)?.value !&#x3D;&#x3D; this.story || this.form.get(&#x27;imageUrl&#x27;)?.value !&#x3D;&#x3D; this.imageURl;
+  }
+
+  /**
+   * Checks if two sets of players are equal.
+   * @param setA The first set of players.
+   * @param setB The second set of players.
+   * @returns True if the sets are equal, false otherwise.
+   */
+  areSetsEqual(setA: Set&lt;Player&gt;, setB: Set&lt;Player&gt;) {
+    if (setA.size !&#x3D;&#x3D; setB.size) return false;
+    for (let item of setA) {
+      if (!setB.has(item)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Handles image change event and uploads the image to Firebase.
+   * @param event The image change event.
+   */
+  onImageChange(event: any) {
+    const file &#x3D; event.target.files[0];
+    if (file) {
+      this.firebaseService.imageUpload(file).then((url: string) &#x3D;&gt; {
+        this.form.controls[&#x27;imageUrl&#x27;].setValue(url);
+      });
+    }
+  }
+
+  adjustTextarea(event: any): void {
+    const textarea &#x3D; event.target as HTMLTextAreaElement;
+    textarea.style.height &#x3D; &#x27;auto&#x27;;
+    textarea.style.height &#x3D; textarea.scrollHeight + &#x27;px&#x27;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-toolbar&gt;
+    &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+      &lt;ion-button class&#x3D;&quot;button&quot; fill&#x3D;&quot;clear&quot; (click)&#x3D;&quot;onCancel()&quot;&gt;
+        &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;arrow-back-outline&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-button&gt;
+    &lt;/ion-buttons&gt;
+
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content class&#x3D;&quot;page-container&quot;&gt;
+  &lt;div class&#x3D;&quot;form-container&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; (keyup.enter)&#x3D;&quot;onSubmit()&quot;&gt;
+      &lt;div class&#x3D;&quot;picture-container&quot;&gt;
+        &lt;app-picture-selectable formControlName&#x3D;&quot;imageUrl&quot;&gt;&lt;/app-picture-selectable&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;input-wrapper&quot;&gt;
+        &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;teams.name&#x27; | translate }}&lt;/ion-title&gt;
+        &lt;ion-item&gt;
+          &lt;ion-input class&#x3D;&quot;input&quot; formControlName&#x3D;&quot;name&quot; type&#x3D;&quot;text&quot;&gt;&lt;/ion-input&gt;
+        &lt;/ion-item&gt;
+      &lt;/div&gt;
+      &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;teams.playerAssignator&#x27; | translate }}&lt;/ion-title&gt;
+      &lt;div class&#x3D;&quot;dragAndDrop&quot;&gt;
+        &lt;div class&#x3D;&quot;list-container&quot;&gt;
+          &lt;ion-title class&#x3D;&quot;list-title&quot;&gt;{{ &#x27;teams.availablePlayers&#x27; | translate }}&lt;/ion-title &gt;
+          &lt;div #availablePlayersListContainer cdkDropList #availablePlayersList&#x3D;&quot;cdkDropList&quot; [cdkDropListData]&#x3D;&quot;availablePlayersArray&quot;
+            [cdkDropListConnectedTo]&#x3D;&quot;[currentTeamList]&quot; id&#x3D;&quot;availablePlayersList&quot; class&#x3D;&quot;players-list&quot;
+            (cdkDropListDropped)&#x3D;&quot;drop($event)&quot;&gt;
+            &lt;ion-row&gt;
+              &lt;ion-col size&#x3D;&quot;12&quot; size-md&#x3D;&quot;10&quot; size-lg&#x3D;&quot;6&quot; size-xl&#x3D;&quot;4&quot; *ngFor&#x3D;&quot;let player of availablePlayers; let i &#x3D; index&quot;
+                cdkDrag&gt;
+                &lt;app-player-info [showDeleteButton]&#x3D;&quot;false&quot; class&#x3D;&quot;player-card&quot; [player]&#x3D;&quot;player&quot;&gt;&lt;/app-player-info&gt;
+              &lt;/ion-col&gt;
+            &lt;/ion-row&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;divider-line&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;list-container&quot;&gt;
+          &lt;ion-title class&#x3D;&quot;list-title&quot;&gt;{{ &#x27;teams.currentTeam&#x27; | translate }}&lt;/ion-title&gt;
+          &lt;div #currentTeamListContainer cdkDropList #currentTeamList&#x3D;&quot;cdkDropList&quot; [cdkDropListData]&#x3D;&quot;currentTeamPlayersArray&quot;
+            [cdkDropListConnectedTo]&#x3D;&quot;[availablePlayersList]&quot; class&#x3D;&quot;team-list&quot; id&#x3D;&quot;currentTeamList&quot;
+            (cdkDropListDropped)&#x3D;&quot;drop($event)&quot;&gt;
+            &lt;ion-row&gt;
+              &lt;ion-col size&#x3D;&quot;12&quot; size-md&#x3D;&quot;10&quot; size-lg&#x3D;&quot;6&quot; size-xl&#x3D;&quot;4&quot; *ngFor&#x3D;&quot;let player of currentTeamPlayers; let i &#x3D; index&quot;
+                cdkDrag&gt;
+                &lt;app-player-info [showDeleteButton]&#x3D;&quot;false&quot; class&#x3D;&quot;player-card&quot; [player]&#x3D;&quot;player&quot;&gt;&lt;/app-player-info&gt;
+              &lt;/ion-col&gt;
+            &lt;/ion-row&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;input-wrapper&quot;&gt;
+        &lt;ion-title class&#x3D;&quot;input-title&quot;&gt;{{ &#x27;games.story&#x27; | translate }}&lt;/ion-title&gt;
+        &lt;ion-item class&#x3D;&quot;dynamic-item story-item&quot;&gt;
+          &lt;ion-textarea class&#x3D;&quot;story-textarea&quot; formControlName&#x3D;&quot;story&quot; (input)&#x3D;&quot;adjustTextarea($event)&quot;&gt;&lt;/ion-textarea&gt;
+        &lt;/ion-item&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/ion-content&gt;
+
+&lt;ion-footer&gt;
+  &lt;ion-button type&#x3D;&quot;submit&quot; class&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;!form.valid || !isFormDirty&quot; (click)&#x3D;&quot;onSubmit()&quot;&gt;{{ &#x27;teams.submit&#x27; | translate }}&lt;/ion-button&gt;
+&lt;/ion-footer&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./team-detail.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">ion-header, ion-content, ion-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toolbar-title {
+  padding-right: 5%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.picture-container {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.input-wrapper {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2%;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.dragAndDrop {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: hidden;
+  margin: 2%;
+  border: 2px solid var(--ion-color-textColor);
+  border-radius: 10px;
+}
+
+.players-list,
+.team-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 100vh;
+  padding: 10px;
+  display: flex;
+  min-width: 400px;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.list-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.list-title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--ion-color-textColor);
+  padding: 5px 0;
+}
+
+.dragging {
+  opacity: 0.5;
+  border: 2px dashed #000;
+}
+
+ion-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.divider-line {
+  width: 5px;
+  height: 100vh;
+  background-color: var(--ion-color-textColor);
+}
+
+.main-background {
+  background-color: #7e4d32;
+  color: #fff;
+}
+
+.rounde {
+  height: 5vh;
+  width: 4vw;
+  margin: 2%;
+  border-radius: 50px;
+}
+
+.custom-loading {
+  --ion-color-primary: #7e4d32;
+}
+
+ion-content {
+  --ion-background-color: #005625;
+}
+
+ion-icon {
+  --ion-background-color: #009a44;
+}
+
+.story-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.story-container ion-textarea {
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  font-size: 1.2rem;
+  text-align: justify;
+  overflow: hidden;
+  resize: none;
+}
+
+.player-card {
+  width: 100%;
+  height: 100%;
+  max-width: 120px;
+  max-height: 150px;
+  margin: 10px;
+}
+
+.story-item {
+  width: 100%;
+  max-width: 80%;
+}
+.story-textarea {
+  height: auto;
+  width: 100%;
+  min-height: 150px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  font-size: 1.2rem;
+  text-align: justify;
+  overflow: hidden;
+  resize: none;
+  padding: 1%;
+}
+ion-input {
+  text-align: center;
+}
+ion-toolbar{
+  --background: var(--ion-color-secondaryGreen);
+}
+ion-footer{
+  background-color: var(--ion-color-primaryGreen);
+  box-shadow: none;
+}
+
+ion-content {
+  --background: var(--ion-color-primaryGreen);
+}
+
+.input{
+  color:var(--ion-color-textColor); 
+}
+ion-item{
+  --background: var(--ion-color-secondaryGreen);
+  color: var(--ion-color-textColor);
+}
+ion-button.button {
+  color:var(--ion-color-textColorDark);
+  --background: var(--ion-color-mediumEndCallToAction);
+  --background-hover: var(--ion-color-callToActionGreen);
+  --background-activated: var(--ion-color-callToActionGreen);
+  --background-focused: var(--ion-color-callToActionGreen);
+  transition: box-shadow 0.3s ease;
+  font-weight: bold;
+  }
+  ion-button.button:hover {
+  --background: var(--ion-color-callToActionGreen);
+  color:var(--ion-color-textColorDark);
+  }
+
+  ion-button.submit {
+    font-size: 2rem;
+    transition: box-shadow 0.3s ease;
+    --background: var(--ion-color-callToActionGreen);
+    color: var(--ion-color-textColorDark);
+    margin-bottom: 1%;
+    margin-top: 1%;
+    font-weight: bold;
+  }
+  
+  ion-button.submit:hover {
+    box-shadow: 0 0 20px var(--ion-color-callToActionGreen);
+  }
+  
+.input-title {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  color:var(--ion-color-textColor);
+
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar>    <ion-buttons slot="start">      <ion-button class="button" fill="clear" (click)="onCancel()">        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>      </ion-button>    </ion-buttons>  </ion-toolbar></ion-header><ion-content class="page-container">  <div class="form-container">    <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">      <div class="picture-container">        <app-picture-selectable formControlName="imageUrl"></app-picture-selectable>      </div>      <div class="input-wrapper">        <ion-title class="input-title">{{ \'teams.name\' | translate }}</ion-title>        <ion-item>          <ion-input class="input" formControlName="name" type="text"></ion-input>        </ion-item>      </div>      <ion-title class="input-title">{{ \'teams.playerAssignator\' | translate }}</ion-title>      <div class="dragAndDrop">        <div class="list-container">          <ion-title class="list-title">{{ \'teams.availablePlayers\' | translate }}</ion-title >          <div #availablePlayersListContainer cdkDropList #availablePlayersList="cdkDropList" [cdkDropListData]="availablePlayersArray"            [cdkDropListConnectedTo]="[currentTeamList]" id="availablePlayersList" class="players-list"            (cdkDropListDropped)="drop($event)">            <ion-row>              <ion-col size="12" size-md="10" size-lg="6" size-xl="4" *ngFor="let player of availablePlayers; let i = index"                cdkDrag>                <app-player-info [showDeleteButton]="false" class="player-card" [player]="player"></app-player-info>              </ion-col>            </ion-row>          </div>        </div>        <div class="divider-line"></div>        <div class="list-container">          <ion-title class="list-title">{{ \'teams.currentTeam\' | translate }}</ion-title>          <div #currentTeamListContainer cdkDropList #currentTeamList="cdkDropList" [cdkDropListData]="currentTeamPlayersArray"            [cdkDropListConnectedTo]="[availablePlayersList]" class="team-list" id="currentTeamList"            (cdkDropListDropped)="drop($event)">            <ion-row>              <ion-col size="12" size-md="10" size-lg="6" size-xl="4" *ngFor="let player of currentTeamPlayers; let i = index"                cdkDrag>                <app-player-info [showDeleteButton]="false" class="player-card" [player]="player"></app-player-info>              </ion-col>            </ion-row>          </div>        </div>      </div>      <div class="input-wrapper">        <ion-title class="input-title">{{ \'games.story\' | translate }}</ion-title>        <ion-item class="dynamic-item story-item">          <ion-textarea class="story-textarea" formControlName="story" (input)="adjustTextarea($event)"></ion-textarea>        </ion-item>      </div>    </form>  </div></ion-content><ion-footer>  <ion-button type="submit" class="submit" [disabled]="!form.valid || !isFormDirty" (click)="onSubmit()">{{ \'teams.submit\' | translate }}</ion-button></ion-footer></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToolbarComponent', 'selector': 'app-toolbar'},{'name': 'ErrorModalComponent', 'selector': 'app-error-modal'},{'name': 'GameDetailComponent', 'selector': 'app-game-detail'},{'name': 'GameInfoComponent', 'selector': 'app-game-info'},{'name': 'GamesPage', 'selector': 'app-games'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayerDetailComponent', 'selector': 'app-player-detail'},{'name': 'PlayerInfoComponent', 'selector': 'app-player-info'},{'name': 'PlayersPage', 'selector': 'app-players'},{'name': 'PositionSelectorComponent', 'selector': 'app-position-selector'},{'name': 'RegisterFormComponent', 'selector': 'app-register-form'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SettingsPage', 'selector': 'app-settings'},{'name': 'SplashPage', 'selector': 'app-splash'},{'name': 'TeamDetailComponent', 'selector': 'app-team-detail'},{'name': 'TeamInfoComponent', 'selector': 'app-team-info'},{'name': 'TeamsPage', 'selector': 'app-teams'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UsersAdminPage', 'selector': 'app-users-admin'}];
+    var DIRECTIVES = [{'name': 'PositionImageDirective', 'selector': '[positionImage]'}];
+    var ACTUAL_COMPONENT = {'name': 'TeamDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TeamDetailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

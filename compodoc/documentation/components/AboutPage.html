@@ -1,0 +1,745 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>home-slam documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">home-slam documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AboutPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/about/about.page.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component for displaying information about the user.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-about</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./about.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./about.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#userUrl" >userUrl</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openLink" >openLink</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="../injectables/HttpClientProvider.html" target="_self">HttpClientProvider</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/about/about.page.ts:17</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor for AboutPage component.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpClientProvider.html" target="_self" >HttpClientProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Injected HttpClientProvider service for making HTTP requests.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/pages/about/about.page.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Angular lifecycle hook that runs after the component&#39;s view has been initialized.
+Here we make an HTTP GET request to fetch user data from GitHub API.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openLink"></a>
+                    <span class="name">
+                        <span ><b>openLink</b></span>
+                        <a href="#openLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openLink(link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/pages/about/about.page.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens a link in a new browser tab.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>link</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The URL to open.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userUrl"></a>
+                    <span class="name">
+                        <span ><b>userUrl</b></span>
+                        <a href="#userUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/about/about.page.ts:17</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>URL of the user&#39;s avatar.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { HttpClientProvider } from &#x27;src/app/core/services/http/http-client.provider&#x27;;
+
+/**
+ * Component for displaying information about the user.
+ */
+@Component({
+  selector: &#x27;app-about&#x27;,
+  templateUrl: &#x27;./about.page.html&#x27;,
+  styleUrls: [&#x27;./about.page.scss&#x27;],
+})
+export class AboutPage implements OnInit {
+
+  /**
+   * URL of the user&#x27;s avatar.
+   */
+  userUrl &#x3D; &quot;&quot;;
+
+  /**
+   * Constructor for AboutPage component.
+   *
+   * @param http Injected HttpClientProvider service for making HTTP requests.
+   */
+  constructor(private http: HttpClientProvider) { }
+
+  /**
+   * Angular lifecycle hook that runs after the component&#x27;s view has been initialized.
+   * Here we make an HTTP GET request to fetch user data from GitHub API.
+   */
+  ngOnInit() {
+    // Fetch user data from GitHub API
+    this.http.get(&quot;https://api.github.com/search/users?q&#x3D;Kuzafkto+in%3Ausername&quot;, null, null)
+      .subscribe((result: any) &#x3D;&gt; {
+        // Set the URL of the user&#x27;s avatar
+        this.userUrl &#x3D; result.items[0].avatar_url;
+      });
+  }
+
+  /**
+   * Opens a link in a new browser tab.
+   *
+   * @param link The URL to open.
+   */
+  openLink(link: string) {
+    window.open(link, &#x27;_blank&#x27;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content [fullscreen]&#x3D;&quot;true&quot;&gt;
+  &lt;ion-header [translucent]&#x3D;&quot;true&quot;&gt;
+    &lt;app-toolbar&gt;&lt;/app-toolbar&gt;
+  &lt;/ion-header&gt;
+  &lt;ion-header collapse&#x3D;&quot;condense&quot;&gt;
+    &lt;ion-toolbar&gt;
+      &lt;ion-title size&#x3D;&quot;large&quot;&gt;KuzaFkto&lt;/ion-title&gt;
+    &lt;/ion-toolbar&gt;
+  &lt;/ion-header&gt;
+
+  &lt;div class&#x3D;&quot;about-container&quot;&gt;
+    &lt;img src&#x3D;&quot;{{userUrl}}&quot; alt&#x3D;&quot;Descripción&quot; class&#x3D;&quot;about-image&quot;&gt;
+    &lt;ion-title class&#x3D;&quot;about-title&quot;&gt;KuzaFkto&lt;/ion-title&gt;
+    &lt;ion-label class&#x3D;&quot;about-description&quot;&gt;{{&#x27;about.description&#x27;|translate}}&lt;/ion-label&gt;
+
+    &lt;ion-row class&#x3D;&quot;about-buttons&quot;&gt;
+      &lt;ion-col size&#x3D;&quot;6&quot; class&#x3D;&quot;about-button-col&quot;&gt;
+        &lt;ion-button shape&#x3D;&quot;round&quot; expand&#x3D;&quot;full&quot; (click)&#x3D;&quot;openLink(&#x27;https://github.com/kuzafkto&#x27;)&quot; class&#x3D;&quot;button&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;logo-github&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+          GitHub (Kuza)
+        &lt;/ion-button&gt;
+      &lt;/ion-col&gt;
+      &lt;ion-col size&#x3D;&quot;6&quot; class&#x3D;&quot;about-button-col&quot;&gt;
+        &lt;ion-button shape&#x3D;&quot;round&quot; expand&#x3D;&quot;full&quot; (click)&#x3D;&quot;openLink(&#x27;https://github.com/Kuzafkto/HomeSlam-TFG-Firebase&#x27;)&quot; class&#x3D;&quot;button&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;logo-github&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+          GitHub (repo)
+        &lt;/ion-button&gt;
+      &lt;/ion-col&gt;
+      &lt;ion-col size&#x3D;&quot;6&quot; class&#x3D;&quot;about-button-col&quot;&gt;
+        &lt;ion-button shape&#x3D;&quot;round&quot; expand&#x3D;&quot;full&quot; (click)&#x3D;&quot;openLink(&#x27;https://www.linkedin.com/in/marco-valente-2b5a3224a/&#x27;)&quot; class&#x3D;&quot;button&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;logo-linkedin&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+          LinkedIn
+        &lt;/ion-button&gt;
+      &lt;/ion-col&gt;
+
+      &lt;ion-col size&#x3D;&quot;6&quot; class&#x3D;&quot;about-button-col&quot;&gt;
+        &lt;ion-button expand&#x3D;&quot;full&quot; (click)&#x3D;&quot;openLink(&#x27;https://twitter.com/KuzaFkto&#x27;)&quot; shape&#x3D;&quot;round&quot; class&#x3D;&quot;button&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;logo-twitter&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+          Twitter (X)
+        &lt;/ion-button&gt;
+      &lt;/ion-col&gt;
+    &lt;/ion-row&gt;
+  &lt;/div&gt;
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./about.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-image {
+    margin:2%;
+    height: 50%; 
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    color: var(--ion-color-textColor);
+  }
+  
+  .about-description {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--ion-color-textColor);
+  }
+  
+  .about-buttons {
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .about-button-col {
+    padding: 0 5px;
+    flex: 1;
+  }
+  
+  
+ion-content{
+  --background: var(--ion-color-primaryGreen);
+}
+
+Ion-icon {
+  color:var(--ion-color-textColorDark);
+  font-weight: bold;
+}
+
+ion-button.button {
+font-size: 1.2rem;
+margin: 2%;
+color:var(--ion-color-textColorDark);
+--background: var(--ion-color-mediumEndCallToAction);
+--background-hover: var(--ion-color-callToActionGreen);
+--background-activated: var(--ion-color-callToActionGreen);
+--background-focused: var(--ion-color-callToActionGreen);
+transition: box-shadow 0.3s ease;
+font-weight: bold;
+}
+ion-button.button:hover {
+--background: var(--ion-color-callToActionGreen);
+color:var(--ion-color-textColorDark);
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-content [fullscreen]="true">  <ion-header [translucent]="true">    <app-toolbar></app-toolbar>  </ion-header>  <ion-header collapse="condense">    <ion-toolbar>      <ion-title size="large">KuzaFkto</ion-title>    </ion-toolbar>  </ion-header>  <div class="about-container">    <img src="{{userUrl}}" alt="Descripción" class="about-image">    <ion-title class="about-title">KuzaFkto</ion-title>    <ion-label class="about-description">{{\'about.description\'|translate}}</ion-label>    <ion-row class="about-buttons">      <ion-col size="6" class="about-button-col">        <ion-button shape="round" expand="full" (click)="openLink(\'https://github.com/kuzafkto\')" class="button">          <ion-icon name="logo-github" slot="start"></ion-icon>          GitHub (Kuza)        </ion-button>      </ion-col>      <ion-col size="6" class="about-button-col">        <ion-button shape="round" expand="full" (click)="openLink(\'https://github.com/Kuzafkto/HomeSlam-TFG-Firebase\')" class="button">          <ion-icon name="logo-github" slot="start"></ion-icon>          GitHub (repo)        </ion-button>      </ion-col>      <ion-col size="6" class="about-button-col">        <ion-button shape="round" expand="full" (click)="openLink(\'https://www.linkedin.com/in/marco-valente-2b5a3224a/\')" class="button">          <ion-icon name="logo-linkedin" slot="start"></ion-icon>          LinkedIn        </ion-button>      </ion-col>      <ion-col size="6" class="about-button-col">        <ion-button expand="full" (click)="openLink(\'https://twitter.com/KuzaFkto\')" shape="round" class="button">          <ion-icon name="logo-twitter" slot="start"></ion-icon>          Twitter (X)        </ion-button>      </ion-col>    </ion-row>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToolbarComponent', 'selector': 'app-toolbar'},{'name': 'ErrorModalComponent', 'selector': 'app-error-modal'},{'name': 'GameDetailComponent', 'selector': 'app-game-detail'},{'name': 'GameInfoComponent', 'selector': 'app-game-info'},{'name': 'GamesPage', 'selector': 'app-games'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayerDetailComponent', 'selector': 'app-player-detail'},{'name': 'PlayerInfoComponent', 'selector': 'app-player-info'},{'name': 'PlayersPage', 'selector': 'app-players'},{'name': 'PositionSelectorComponent', 'selector': 'app-position-selector'},{'name': 'RegisterFormComponent', 'selector': 'app-register-form'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SettingsPage', 'selector': 'app-settings'},{'name': 'SplashPage', 'selector': 'app-splash'},{'name': 'TeamDetailComponent', 'selector': 'app-team-detail'},{'name': 'TeamInfoComponent', 'selector': 'app-team-info'},{'name': 'TeamsPage', 'selector': 'app-teams'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UsersAdminPage', 'selector': 'app-users-admin'}];
+    var DIRECTIVES = [{'name': 'PositionImageDirective', 'selector': '[positionImage]'}];
+    var ACTUAL_COMPONENT = {'name': 'AboutPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AboutPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
